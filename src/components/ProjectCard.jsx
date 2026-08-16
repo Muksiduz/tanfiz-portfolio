@@ -1,7 +1,6 @@
 // src/components/ProjectCard.jsx
 
 import { motion } from "motion/react";
-import { useRef } from "react";
 
 import {
   projectReveal,
@@ -10,21 +9,9 @@ import {
   projectContent,
 } from "../animations/projectAnimations";
 
-import { useProjectParallax } from "../animations/parallexAnimations";
-
 export default function ProjectCard({ project, index }) {
-  const ref = useRef(null);
-
-  // Different movement for each column
-  const speeds = [35, 55, 40];
-
-  const intensity = speeds[index % 3];
-
-  const y = useProjectParallax(ref, intensity);
-
   return (
     <motion.article
-      ref={ref}
       variants={projectReveal}
       initial="hidden"
       whileInView="visible"
@@ -38,29 +25,30 @@ export default function ProjectCard({ project, index }) {
         overflow-hidden
         bg-neutral-200
       ">
+      {/* IMAGE CONTAINER */}
+
       <div
         className="
           relative
           h-[480px]
           overflow-hidden
         ">
-        {/* PARALLAX IMAGE */}
+        {/* IMAGE */}
 
         <motion.img
           src={project.image}
           alt={project.title}
-          style={{ y }}
           variants={projectImage}
           initial="rest"
           whileHover="hover"
+          loading={index < 3 ? "eager" : "lazy"}
+          decoding="async"
           className="
             absolute
-            -left-[5%]
-            -top-[10%]
-            h-[120%]
-            w-[110%]
+            inset-0
+            h-full
+            w-full
             object-cover
-            will-change-transform
           "
         />
 
@@ -107,7 +95,14 @@ export default function ProjectCard({ project, index }) {
             {project.category}
           </p>
 
-          <h3 className="text-xl font-light">{project.title}</h3>
+          <h3
+            className="
+              text-xl
+              font-light
+              tracking-tight
+            ">
+            {project.title}
+          </h3>
 
           {project.description && (
             <p
@@ -123,7 +118,7 @@ export default function ProjectCard({ project, index }) {
           )}
         </motion.div>
 
-        {/* NUMBER */}
+        {/* PROJECT NUMBER */}
 
         <span
           className="

@@ -19,8 +19,8 @@ export default function Hero() {
         top-0
         z-0
         flex
-        h-screen
-        min-h-[700px]
+      h-[900px]
+min-h-[900px]
         w-full
         items-center
         justify-center
