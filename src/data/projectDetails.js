@@ -11,8 +11,8 @@ export const projectDetails = {
     role: "Art Direction, Motion Design, Animation",
 
     video: {
-      type: "vimeo",
-      url: "https://player.vimeo.com/video/000000000",
+      type: "youtube",
+      url: "https://youtu.be/YJAJppVaOXc?si=rOSrJE8P9lm-BzNK",
     },
 
     heroImage:
@@ -50,7 +50,7 @@ export const projectDetails = {
 
     video: {
       type: "youtube",
-      url: "https://www.youtube.com/embed/VIDEO_ID",
+      url: "https://youtu.be/YJAJppVaOXc?si=rOSrJE8P9lm-BzNK",
     },
 
     heroImage:
