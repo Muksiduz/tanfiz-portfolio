@@ -1,10 +1,8 @@
-// src/data/projects.js
-
 export const projects = [
   {
     id: 1,
     title: "Visual Stories",
-    category: "Motion Graphics",
+    category: "Motion",
     description:
       "Experimental motion and visual storytelling exploring movement, texture and composition.",
     image:
@@ -14,7 +12,7 @@ export const projects = [
   {
     id: 2,
     title: "Night Motion",
-    category: "Animation",
+    category: "Motion",
     description:
       "A visual experiment built around light, atmosphere and dynamic movement.",
     image:
@@ -24,7 +22,7 @@ export const projects = [
   {
     id: 3,
     title: "New Perspectives",
-    category: "Art Direction",
+    category: "Design",
     description:
       "Editorial-inspired visual compositions combining photography, typography and color.",
     image:
@@ -44,7 +42,7 @@ export const projects = [
   {
     id: 5,
     title: "After Dark",
-    category: "Motion Design",
+    category: "Motion",
     description:
       "Dark atmospheric visuals combining light, color and movement.",
     image:
@@ -54,7 +52,7 @@ export const projects = [
   {
     id: 6,
     title: "Fragments",
-    category: "Visual Design",
+    category: "Design",
     description:
       "Abstract compositions built from photography, typography and fragmented forms.",
     image:
@@ -74,7 +72,7 @@ export const projects = [
   {
     id: 8,
     title: "Color Studies",
-    category: "Graphic Design",
+    category: "Design",
     description:
       "Exploring bold color combinations and expressive graphic compositions.",
     image:
@@ -84,7 +82,7 @@ export const projects = [
   {
     id: 9,
     title: "Urban Motion",
-    category: "Motion Graphics",
+    category: "Motion",
     description:
       "A visual study inspired by architecture, urban environments and movement.",
     image:
@@ -94,7 +92,7 @@ export const projects = [
   {
     id: 10,
     title: "Still / Moving",
-    category: "Photography",
+    category: "Design",
     description:
       "Photography and motion combined into a series of atmospheric compositions.",
     image:
@@ -104,7 +102,7 @@ export const projects = [
   {
     id: 11,
     title: "Future Forms",
-    category: "3D / Motion",
+    category: "Motion",
     description:
       "Experimental forms and lighting inspired by digital environments.",
     image:
@@ -114,7 +112,7 @@ export const projects = [
   {
     id: 12,
     title: "The Archive",
-    category: "Visual Identity",
+    category: "Art Direction",
     description:
       "An archival-inspired visual system combining photography and typography.",
     image:
