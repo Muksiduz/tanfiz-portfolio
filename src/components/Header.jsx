@@ -83,12 +83,15 @@ export default function Header() {
               key={item.label}
               to={item.href}
               className="
-                text-[12px]
-                text-neutral-800
-                transition-opacity
-                duration-300
-                hover:opacity-40
-              ">
+  text-[15px]
+  font-medium
+  uppercase
+  tracking-[0.02em]
+  text-neutral-900
+  transition-all
+  duration-300
+  hover:text-neutral-500
+">
               {item.label}
             </Link>
           ))}
@@ -142,7 +145,7 @@ export default function Header() {
             DESKTOP SOCIAL LINKS
         ================================================= */}
 
-        <div className="hidden items-center gap-4 sm:flex">
+        <div className="hidden items-center gap-5 sm:flex">
           {socialLinks.map((social) => (
             <a
               key={social.name}
@@ -151,14 +154,15 @@ export default function Header() {
               target="_blank"
               rel="noreferrer"
               className="
-                text-[12px]
-                font-semibold
-                text-neutral-800
-                transition-opacity
-                duration-300
-                hover:opacity-40
-              ">
-              {social.shortName}
+        flex
+        items-center
+        justify-center
+        text-neutral-800
+        transition-opacity
+        duration-300
+        hover:opacity-40
+      ">
+              {getSocialIcon(social.name)}
             </a>
           ))}
         </div>
@@ -336,20 +340,20 @@ function getSocialIcon(name) {
   const normalizedName = name.toLowerCase();
 
   if (normalizedName.includes("instagram")) {
-    return <FaInstagram size={15} />;
+    return <FaInstagram size={18} />;
   }
 
   if (normalizedName.includes("youtube")) {
-    return <FaYoutube size={15} />;
+    return <FaYoutube size={18} />;
   }
 
   if (normalizedName.includes("linkedin")) {
-    return <FaLinkedinIn size={15} />;
+    return <FaLinkedinIn size={18} />;
   }
 
   if (normalizedName.includes("vimeo")) {
-    return <FaVimeoV size={15} />;
+    return <FaVimeoV size={18} />;
   }
 
-  return <Globe size={15} strokeWidth={1.5} />;
+  return <Globe size={18} strokeWidth={1.5} />;
 }

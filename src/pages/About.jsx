@@ -5,6 +5,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
+import profileImage from "../assets/tanfiz.png";
+
 export default function About() {
   return (
     <div className="min-h-screen bg-[#fafaf8]">
@@ -15,8 +17,8 @@ export default function About() {
             INTRO
         ====================================== */}
 
-        <section className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          {/* LEFT IMAGE */}
+        <section className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          {/* LEFT CONTENT */}
 
           <motion.div
             initial={{
@@ -29,37 +31,6 @@ export default function About() {
             }}
             transition={{
               duration: 0.9,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="lg:sticky lg:top-[120px] lg:h-fit">
-            <div className="aspect-square w-full overflow-hidden bg-neutral-200">
-              <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=85"
-                alt="Creative director portrait"
-                className="
-                  h-full
-                  w-full
-                  object-cover
-                  grayscale
-                "
-              />
-            </div>
-          </motion.div>
-
-          {/* RIGHT CONTENT */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.9,
-              delay: 0.1,
               ease: [0.22, 1, 0.36, 1],
             }}
             className="pt-2">
@@ -74,7 +45,7 @@ export default function About() {
                 tracking-[-0.045em]
                 text-[#0798d2]
               ">
-              Hi, we're LM.
+              Hi, I'am Sayed Tanfiz.
             </h1>
 
             {/* INTRO */}
@@ -90,7 +61,7 @@ export default function About() {
                 md:text-[15px]
               ">
               <p>
-                We're a creative studio focused on motion design, visual
+                I am creative studio focused on motion design, visual
                 storytelling, digital experiences and experimental design.
               </p>
 
@@ -153,188 +124,64 @@ export default function About() {
               hello@yourstudio.com
             </a>
           </motion.div>
-        </section>
 
-        {/* =====================================
-            CLIENTS + AWARDS
-        ====================================== */}
-
-        <section className="mt-32 grid gap-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          {/* =================================
-              CLIENTS
-          ================================== */}
+          {/* RIGHT PROFILE IMAGE */}
 
           <motion.div
             initial={{
               opacity: 0,
-              y: 30,
+              y: 40,
             }}
-            whileInView={{
+            animate={{
               opacity: 1,
               y: 0,
             }}
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
             transition={{
-              duration: 0.8,
-            }}>
-            <h2
-              className="
-                text-center
-                text-xl
-                font-semibold
-                tracking-tight
-                text-[#d4d4d2]
-                lg:text-2xl
-              ">
-              Clients
-            </h2>
-
-            <div
-              className="
-                mt-10
-                grid
-                grid-cols-3
-                items-center
-                gap-x-8
-                gap-y-10
-                text-center
-              ">
-              <span className="text-2xl font-serif text-[#d3d3d1]">Vox</span>
-
-              <span className="text-xl font-bold text-[#d3d3d1]">
-                BBC
-                <br />
-                SPORT
-              </span>
-
-              <span className="text-2xl font-serif italic text-[#d3d3d1]">
-                Sports
-              </span>
-
-              <span className="text-lg font-serif text-[#d3d3d1]">
-                The
-                <br />
-                New York
-                <br />
-                Times
-              </span>
-
-              <span className="text-2xl font-medium text-[#d3d3d1]">
-                Google
-              </span>
-
-              <span className="text-xl font-black text-[#d3d3d1]">
-                FORTNITE
-              </span>
+              duration: 0.9,
+              delay: 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="lg:sticky lg:top-[130px]">
+            <div className="aspect-square w-full overflow-hidden bg-neutral-200">
+              <img
+                src={profileImage}
+                alt="Creative director portrait"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                  
+                  transition-transform
+                  duration-700
+                  hover:scale-[1.02]
+                "
+                loading="eager"
+              />
             </div>
 
-            {/* STUDIOS */}
+            {/* IMAGE CAPTION */}
 
-            <h2
-              className="
-                mt-20
-                text-center
-                text-xl
-                font-semibold
-                tracking-tight
-                text-[#d4d4d2]
-                lg:text-2xl
-              ">
-              Studios
-            </h2>
-
-            <div className="mt-10 text-center">
+            <div className="mt-4 flex items-center justify-between">
               <span
                 className="
-                  text-2xl
-                  font-black
-                  tracking-[-0.05em]
-                  text-[#d3d3d1]
+                  font-mono
+                  text-[8px]
+                  uppercase
+                  tracking-[0.2em]
+                  text-[#8b9298]
                 ">
-                GOLDEN
-                <br />
-                WOLF
+                LM Studio
               </span>
-            </div>
-          </motion.div>
 
-          {/* =================================
-              AWARDS
-          ================================== */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.1,
-            }}>
-            <h2
-              className="
-                text-[clamp(2.2rem,4vw,3.5rem)]
-                font-semibold
-                leading-none
-                tracking-[-0.04em]
-                text-[#0798d2]
-              ">
-              Honors & Awards
-            </h2>
-
-            <div className="mt-10 space-y-9">
-              {/* AWARD 1 */}
-
-              <Award
-                title="CREATIVE EXCELLENCE AWARD — WINNER (2025)"
-                description="Outstanding Motion Design — Creative visual storytelling project."
-              />
-
-              {/* AWARD 2 */}
-
-              <Award
-                title="MOTION DESIGN AWARDS — WINNER (2025)"
-                description="Best Animation / Motion Design — Experimental visual identity."
-              />
-
-              {/* AWARD 3 */}
-
-              <Award
-                title="DIGITAL DESIGN AWARDS — WINNER (2024)"
-                description="Outstanding Digital Experience — Interactive creative experience."
-              />
-
-              {/* AWARD 4 */}
-
-              <Award
-                title="THE MOTION AWARDS — WINNER (2024)"
-                description="Best Explanatory / Educational Motion Project."
-              />
-
-              {/* AWARD 5 */}
-
-              <Award
-                title="THE MOTION AWARDS — NOMINEE (2025)"
-                description="Best Experimental Motion Design."
-              />
-
-              {/* AWARD 6 */}
-
-              <Award
-                title="AWWWARDS — HONORABLE MENTION (2025)"
-                description="Recognition for creative direction and digital experience."
-              />
+              <span
+                className="
+                  font-mono
+                  text-[8px]
+                  tracking-[0.2em]
+                  text-[#8b9298]
+                ">
+                2026
+              </span>
             </div>
           </motion.div>
         </section>
@@ -343,42 +190,6 @@ export default function About() {
       <Footer />
 
       <ScrollToTop />
-    </div>
-  );
-}
-
-/* ==========================================
-   AWARD COMPONENT
-========================================== */
-
-function Award({ title, description }) {
-  return (
-    <div>
-      <h3
-        className="
-          text-[13px]
-          font-bold
-          uppercase
-          tracking-[0.01em]
-          text-[#8b9298]
-          underline
-          decoration-[#8b9298]
-          underline-offset-2
-          md:text-[14px]
-        ">
-        {title}
-      </h3>
-
-      <p
-        className="
-          mt-0.5
-          text-[12px]
-          leading-[1.45]
-          text-[#969da2]
-          md:text-[13px]
-        ">
-        {description}
-      </p>
     </div>
   );
 }
