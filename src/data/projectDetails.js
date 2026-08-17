@@ -12,7 +12,7 @@ export const projectDetails = {
 
     video: {
       type: "youtube",
-      url: "https://youtu.be/YJAJppVaOXc?si=rOSrJE8P9lm-BzNK",
+      url: "https://www.youtube.com/embed/YJAJppVaOXc",
     },
 
     heroImage:
@@ -50,7 +50,7 @@ export const projectDetails = {
 
     video: {
       type: "youtube",
-      url: "https://youtu.be/YJAJppVaOXc?si=rOSrJE8P9lm-BzNK",
+      url: "https://www.youtube.com/embed/YJAJppVaOXc",
     },
 
     heroImage:
