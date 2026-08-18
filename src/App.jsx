@@ -7,9 +7,12 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectDetail from "./pages/ProjectDetail";
 
+import CursorPencil from "./components/CursorPencil";
+
 export default function App() {
   return (
     <BrowserRouter>
+      <CursorPencil />
       <Routes>
         <Route path="/" element={<Home />} />
 
