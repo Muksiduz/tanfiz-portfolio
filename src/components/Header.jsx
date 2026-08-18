@@ -102,10 +102,11 @@ export default function Header() {
   items-center
   px-3
   py-3
-  text-[15px]
+  text-[20px]
+  font-mono
   font-medium
   uppercase
-  tracking-[0.02em]
+  tracking-[0.06em]
   text-neutral-900
   transition-all
   duration-300

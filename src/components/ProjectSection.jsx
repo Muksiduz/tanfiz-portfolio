@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 
-const categories = ["All", "Motion", "Design", "Branding", "2D"];
+const categories = ["Motion", "Design", "Branding"];
 
 export default function ProjectSection() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -41,44 +41,11 @@ export default function ProjectSection() {
         bg-[#fafaf8]
         px-[5vw]
         pb-40
-        pt-[18vh]
+        pt-[10vh]
         md:px-[6vw]
         lg:px-[5.5vw]
       ">
       {/* HEADER */}
-
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{
-          duration: 0.8,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        className="mb-12 max-w-5xl">
-        <p
-          className="
-            font-mono
-            text-[9px]
-            uppercase
-            tracking-[0.35em]
-            text-[#9aa0a5]
-          ">
-          Selected Projects
-        </p>
-
-        <h2
-          className="
-            mt-6
-            text-[clamp(3rem,6vw,6rem)]
-            font-light
-            leading-[0.95]
-            tracking-[-0.045em]
-            text-[#242424]
-          ">
-          Motion & Design
-        </h2>
-      </motion.div>
 
       {/* CATEGORY NAVIGATION */}
 
@@ -114,7 +81,7 @@ export default function ProjectSection() {
                 group
                 relative
                 font-mono
-                text-[10px]
+                text-[18px]
                 uppercase
                 tracking-[0.2em]
                 transition-colors
@@ -145,7 +112,7 @@ export default function ProjectSection() {
           );
         })}
 
-        <span className="ml-auto hidden font-mono text-[9px] tracking-[0.15em] text-[#9aa0a5] sm:block">
+        <span className="ml-auto hidden font-mono text-[18px] tracking-[0.15em] text-[#9aa0a5] sm:block">
           {String(filteredProjects.length).padStart(2, "0")} PROJECTS
         </span>
       </motion.nav>

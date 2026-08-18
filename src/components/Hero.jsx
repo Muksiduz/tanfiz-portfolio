@@ -9,8 +9,23 @@ import heroVideo from "../assets/heroVideo.mp4";
 // INTERACTIVE LETTER
 // ============================================================
 
-function InteractiveLetter({ children, className = "" }) {
+function InteractiveLetter({
+  children,
+  className = "",
+  delay = 0,
+  direction = "left",
+}) {
   const ref = useRef(null);
+
+  // ----------------------------------------------------------
+  // ENTRANCE DIRECTION
+  // ----------------------------------------------------------
+
+  const initialX = direction === "left" ? -100 : 100;
+
+  // ----------------------------------------------------------
+  // INTERACTIVE SCALE
+  // ----------------------------------------------------------
 
   const scaleX = useSpring(1, {
     stiffness: 500,
@@ -23,6 +38,10 @@ function InteractiveLetter({ children, className = "" }) {
     damping: 30,
     mass: 0.4,
   });
+
+  // ----------------------------------------------------------
+  // MOUSE INTERACTION
+  // ----------------------------------------------------------
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -38,17 +57,14 @@ function InteractiveLetter({ children, className = "" }) {
 
       const distance = Math.sqrt(dx * dx + dy * dy);
 
-      // Distance at which the letter reacts
       const radius = 220;
 
       if (distance < radius) {
         const strength = 1 - distance / radius;
 
-        // Direction from cursor to letter
         const directionX = dx / Math.max(distance, 1);
         const directionY = dy / Math.max(distance, 1);
 
-        // Compress in the direction of the cursor
         const horizontalSquish = 1 - Math.abs(directionX) * strength * 0.35;
 
         const verticalSquish = 1 - Math.abs(directionY) * strength * 0.25;
@@ -68,9 +84,26 @@ function InteractiveLetter({ children, className = "" }) {
     };
   }, [scaleX, scaleY]);
 
+  // ----------------------------------------------------------
+  // LETTER
+  // ----------------------------------------------------------
+
   return (
     <motion.span
       ref={ref}
+      initial={{
+        opacity: 0,
+        x: initialX,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      transition={{
+        duration: 0.9,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       style={{
         scaleX,
         scaleY,
@@ -88,10 +121,14 @@ function InteractiveLetter({ children, className = "" }) {
 
 export default function Hero() {
   // ==========================================================
-  // SCROLL PROGRESS
+  // HERO REF
   // ==========================================================
 
   const heroRef = useRef(null);
+
+  // ==========================================================
+  // SCROLL PROGRESS
+  // ==========================================================
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -99,27 +136,31 @@ export default function Hero() {
   });
 
   // ==========================================================
-  // VIDEO
+  // VIDEO SIZE
   // ==========================================================
 
   const videoWidth = useTransform(
     scrollYProgress,
     [0, 0.45],
-    ["42vw", "100vw"],
+    ["25vw", "100vw"],
   );
 
   const videoHeight = useTransform(
     scrollYProgress,
     [0, 0.45],
-    ["24vw", "100vh"],
+    ["28vw", "100vh"],
   );
+
+  // ==========================================================
+  // VIDEO ROTATION / RADIUS
+  // ==========================================================
 
   const videoRotate = useTransform(scrollYProgress, [0, 0.35], [-3, 0]);
 
   const videoRadius = useTransform(scrollYProgress, [0, 0.4], [8, 0]);
 
   // ==========================================================
-  // MAIN TYPOGRAPHY
+  // LEFT TYPOGRAPHY
   // ==========================================================
 
   const motionX = useTransform(
@@ -136,6 +177,10 @@ export default function Hero() {
 
   const motionScale = useTransform(scrollYProgress, [0, 0.45], [1, 1.15]);
 
+  // ==========================================================
+  // RIGHT TYPOGRAPHY
+  // ==========================================================
+
   const movieX = useTransform(
     scrollYProgress,
     [0, 0.45, 0.7, 1],
@@ -147,6 +192,32 @@ export default function Hero() {
     [0, 0.45, 0.7, 1],
     ["0vh", "10vh", "-5vh", "-30vh"],
   );
+
+  // ==========================================================
+  // VIDEO ENTRANCE ANIMATION
+  // ==========================================================
+
+  const videoEntrance = {
+    hidden: {
+      opacity: 0,
+      scale: 0.94,
+    },
+
+    visible: {
+      opacity: 1,
+      scale: 1,
+
+      transition: {
+        duration: 1,
+        delay: 0.45,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  // ==========================================================
+  // RENDER
+  // ==========================================================
 
   return (
     <section
@@ -184,7 +255,9 @@ export default function Hero() {
             overflow-hidden
             select-none
           ">
-          {/* SAYED — LEFT */}
+          {/* ==================================================
+              SAYED — LEFT
+          ================================================== */}
 
           <motion.div
             style={{
@@ -198,22 +271,34 @@ export default function Hero() {
               top-[10vh]
               whitespace-nowrap
               font-sans
-              text-[27vw]
+              text-[24vw]
               font-black
               italic
               uppercase
               leading-[0.72]
-              tracking-[-0.12em]
+              tracking-[-70px]
               text-[#08c6ed]
             ">
-            <InteractiveLetter>S</InteractiveLetter>
-            <InteractiveLetter>A</InteractiveLetter>
-            <InteractiveLetter>Y</InteractiveLetter>
-            <InteractiveLetter>E</InteractiveLetter>
-            <InteractiveLetter>D</InteractiveLetter>
+            <InteractiveLetter direction="left" delay={0.05}>
+              S
+            </InteractiveLetter>
+
+            <InteractiveLetter direction="left" delay={0.1}>
+              Y
+            </InteractiveLetter>
+
+            <InteractiveLetter direction="left" delay={0.15}>
+              E
+            </InteractiveLetter>
+
+            <InteractiveLetter direction="left" delay={0.2}>
+              D
+            </InteractiveLetter>
           </motion.div>
 
-          {/* TANFIZ — RIGHT */}
+          {/* ==================================================
+              TANFIZ — RIGHT
+          ================================================== */}
 
           <motion.div
             style={{
@@ -226,7 +311,7 @@ export default function Hero() {
               right-[-1vw]
               whitespace-nowrap
               font-sans
-              text-[25vw]
+              text-[23vw]
               font-black
               italic
               uppercase
@@ -234,12 +319,29 @@ export default function Hero() {
               tracking-[-0.12em]
               text-[#08c6ed]
             ">
-            <InteractiveLetter>T</InteractiveLetter>
-            <InteractiveLetter>A</InteractiveLetter>
-            <InteractiveLetter>N</InteractiveLetter>
-            <InteractiveLetter>F</InteractiveLetter>
-            <InteractiveLetter>I</InteractiveLetter>
-            <InteractiveLetter>Z</InteractiveLetter>
+            <InteractiveLetter direction="right" delay={0.25}>
+              T
+            </InteractiveLetter>
+
+            <InteractiveLetter direction="right" delay={0.3}>
+              A
+            </InteractiveLetter>
+
+            <InteractiveLetter direction="right" delay={0.35}>
+              N
+            </InteractiveLetter>
+
+            <InteractiveLetter direction="right" delay={0.4}>
+              F
+            </InteractiveLetter>
+
+            <InteractiveLetter direction="right" delay={0.45}>
+              I
+            </InteractiveLetter>
+
+            <InteractiveLetter direction="right" delay={0.5}>
+              Z
+            </InteractiveLetter>
           </motion.div>
         </div>
 
@@ -248,6 +350,9 @@ export default function Hero() {
         ================================================== */}
 
         <motion.div
+          variants={videoEntrance}
+          initial="hidden"
+          animate="visible"
           style={{
             width: videoWidth,
             height: videoHeight,
@@ -257,7 +362,7 @@ export default function Hero() {
           className="
             absolute
             left-1/2
-            top-1/2
+            top-[54%]
             z-20
             -translate-x-1/2
             -translate-y-1/2
@@ -266,8 +371,6 @@ export default function Hero() {
             border-black
             bg-black
           ">
-          {/* LOCAL */}
-
           <video
             src={heroVideo}
             autoPlay

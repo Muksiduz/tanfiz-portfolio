@@ -351,11 +351,11 @@ function ImageGrid({ images, title, type }) {
 function SectionTitle({ number, title }) {
   return (
     <div className="flex items-center gap-5 border-y border-neutral-200 py-4">
-      <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-400">
+      <span className="font-mono text-[16px] tracking-[0.2em] text-neutral-400">
         {number}
       </span>
 
-      <h2 className="font-mono text-[9px] uppercase tracking-[0.3em] text-neutral-500">
+      <h2 className="font-mono text-[16px] uppercase tracking-[0.3em] text-neutral-500">
         {title}
       </h2>
     </div>

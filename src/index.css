@@ -10,15 +10,22 @@
 /* =========================================
    GLOBAL
 ========================================= */
+
 html,
 body {
   cursor:
-    url("/pencilOne.png") 2 4,
-    auto !important;
+    url("/cursortan.png") 2 4,
+    auto;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
+/* =========================================
+   CLICK CURSOR
+========================================= */
+
 a,
 button,
 input,
@@ -26,17 +33,27 @@ select,
 option,
 [role="button"],
 [role="link"] {
-  cursor: auto;
+  cursor:
+    url("/cursortan2.png") 2 4,
+    pointer;
 }
+
+/* =========================================
+   MEDIA
+========================================= */
+/* 
 img,
 video,
 iframe {
   cursor: auto;
-}
+} */
+
+/* =========================================
+   BODY
+========================================= */
+
 body {
   user-select: none;
-}
-body {
   margin: 0;
   min-width: 320px;
 
@@ -109,14 +126,17 @@ body::after {
 }
 
 /* =========================================
-   CUSTOM PENCIL CURSOR
+   CUSTOM PENCIL CURSOR / DRAWING CANVAS
 ========================================= */
 
 .drawing-canvas {
   position: fixed;
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   pointer-events: none;
+
   z-index: 9997;
 }
