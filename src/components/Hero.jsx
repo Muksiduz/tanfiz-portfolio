@@ -1,9 +1,10 @@
 // src/components/Hero.jsx
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 
 import heroVideo from "../assets/heroVideo.mp4";
+import heroVideoMobile from "../assets/heroVideo.mp4";
 
 // ============================================================
 // INTERACTIVE LETTER
@@ -121,6 +122,37 @@ function InteractiveLetter({
 
 export default function Hero() {
   // ==========================================================
+  // RESPONSIVE BREAKPOINT
+  // ==========================================================
+
+  const [screenType, setScreenType] = useState("desktop");
+
+  useEffect(() => {
+    const updateScreenType = () => {
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        setScreenType("mobile");
+      } else if (width < 1024) {
+        setScreenType("tablet");
+      } else {
+        setScreenType("desktop");
+      }
+    };
+
+    updateScreenType();
+
+    window.addEventListener("resize", updateScreenType);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenType);
+    };
+  }, []);
+
+  const isMobile = screenType === "mobile";
+  const isTablet = screenType === "tablet";
+
+  // ==========================================================
   // HERO REF
   // ==========================================================
 
@@ -139,23 +171,35 @@ export default function Hero() {
   // VIDEO SIZE
   // ==========================================================
 
+  const initialVideoWidth = isMobile ? "78vw" : isTablet ? "52vw" : "25vw";
+
+  const initialVideoHeight = isMobile
+    ? "43.875vw"
+    : isTablet
+      ? "29.25vw"
+      : "28vw";
+
   const videoWidth = useTransform(
     scrollYProgress,
     [0, 0.45],
-    ["25vw", "100vw"],
+    [initialVideoWidth, "100vw"],
   );
 
   const videoHeight = useTransform(
     scrollYProgress,
     [0, 0.45],
-    ["28vw", "100vh"],
+    [initialVideoHeight, "100vh"],
   );
 
   // ==========================================================
-  // VIDEO ROTATION / RADIUS
+  // VIDEO ROTATION
   // ==========================================================
 
   const videoRotate = useTransform(scrollYProgress, [0, 0.35], [-3, 0]);
+
+  // ==========================================================
+  // VIDEO RADIUS
+  // ==========================================================
 
   const videoRadius = useTransform(scrollYProgress, [0, 0.4], [8, 0]);
 
@@ -166,16 +210,28 @@ export default function Hero() {
   const motionX = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    ["0vw", "-8vw", "-18vw"],
+    isMobile
+      ? ["0vw", "-4vw", "-9vw"]
+      : isTablet
+        ? ["0vw", "-5vw", "-11vw"]
+        : ["0vw", "-8vw", "-18vw"],
   );
 
   const motionY = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    ["0vh", "-15vh", "-35vh"],
+    isMobile
+      ? ["0vh", "-6vh", "-14vh"]
+      : isTablet
+        ? ["0vh", "-9vh", "-20vh"]
+        : ["0vh", "-15vh", "-35vh"],
   );
 
-  const motionScale = useTransform(scrollYProgress, [0, 0.45], [1, 1.15]);
+  const motionScale = useTransform(
+    scrollYProgress,
+    [0, 0.45],
+    [1, isMobile ? 1.08 : isTablet ? 1.1 : 1.15],
+  );
 
   // ==========================================================
   // RIGHT TYPOGRAPHY
@@ -184,17 +240,25 @@ export default function Hero() {
   const movieX = useTransform(
     scrollYProgress,
     [0, 0.45, 0.7, 1],
-    ["0vw", "4vw", "15vw", "35vw"],
+    isMobile
+      ? ["0vw", "2vw", "7vw", "15vw"]
+      : isTablet
+        ? ["0vw", "3vw", "9vw", "20vw"]
+        : ["0vw", "4vw", "15vw", "35vw"],
   );
 
   const movieY = useTransform(
     scrollYProgress,
     [0, 0.45, 0.7, 1],
-    ["0vh", "10vh", "-5vh", "-30vh"],
+    isMobile
+      ? ["0vh", "5vh", "-2vh", "-12vh"]
+      : isTablet
+        ? ["0vh", "7vh", "-3vh", "-18vh"]
+        : ["0vh", "10vh", "-5vh", "-30vh"],
   );
 
   // ==========================================================
-  // VIDEO ENTRANCE ANIMATION
+  // VIDEO ENTRANCE
   // ==========================================================
 
   const videoEntrance = {
@@ -216,6 +280,22 @@ export default function Hero() {
   };
 
   // ==========================================================
+  // HERO HEIGHT
+  // ==========================================================
+
+  const heroHeight = isMobile
+    ? "h-[200vh]"
+    : isTablet
+      ? "h-[220vh]"
+      : "h-[240vh]";
+
+  // ==========================================================
+  // SELECT VIDEO
+  // ==========================================================
+
+  const currentVideo = isMobile ? heroVideoMobile : heroVideo;
+
+  // ==========================================================
   // RENDER
   // ==========================================================
 
@@ -223,12 +303,12 @@ export default function Hero() {
     <section
       ref={heroRef}
       data-no-draw
-      className="
+      className={`
         relative
         z-0
-        h-[240vh]
+        ${heroHeight}
         bg-[#f8f7f2]
-      ">
+      `}>
       {/* ====================================================
           STICKY VIEWPORT
       ==================================================== */}
@@ -238,7 +318,6 @@ export default function Hero() {
           sticky
           top-0
           h-[100svh]
-          min-h-[700px]
           w-full
           overflow-hidden
         ">
@@ -265,20 +344,41 @@ export default function Hero() {
               y: motionY,
               scale: motionScale,
             }}
-            className="
+            className={`
               absolute
-              left-[-2vw]
-              top-[10vh]
               whitespace-nowrap
               font-sans
-              text-[24vw]
               font-black
               italic
               uppercase
-              leading-[0.72]
-              tracking-[-70px]
               text-[#08c6ed]
-            ">
+
+              ${
+                isMobile
+                  ? `
+                    left-[-6vw]
+                    top-[11vh]
+                    text-[31vw]
+                    leading-[0.68]
+                    tracking-[-0.065em]
+                  `
+                  : isTablet
+                    ? `
+                      left-[-2vw]
+                      top-[11vh]
+                      text-[20vw]
+                      leading-[0.72]
+                      tracking-[-0.07em]
+                    `
+                    : `
+                      left-[-2vw]
+                      top-[10vh]
+                      text-[24vw]
+                      leading-[0.72]
+                      tracking-[-0.055em]
+                    `
+              }
+            `}>
             <InteractiveLetter direction="left" delay={0.05}>
               S
             </InteractiveLetter>
@@ -305,20 +405,41 @@ export default function Hero() {
               x: movieX,
               y: movieY,
             }}
-            className="
+            className={`
               absolute
-              bottom-[1vh]
-              right-[-1vw]
               whitespace-nowrap
               font-sans
-              text-[23vw]
               font-black
               italic
               uppercase
-              leading-[0.7]
-              tracking-[-0.12em]
               text-[#08c6ed]
-            ">
+
+              ${
+                isMobile
+                  ? `
+                    bottom-[3vh]
+                    right-[-7vw]
+                    text-[28vw]
+                    leading-[0.68]
+                    tracking-[-0.065em]
+                  `
+                  : isTablet
+                    ? `
+                      bottom-[2vh]
+                      right-[-2vw]
+                      text-[19vw]
+                      leading-[0.7]
+                      tracking-[-0.07em]
+                    `
+                    : `
+                      bottom-[1vh]
+                      right-[-1vw]
+                      text-[23vw]
+                      leading-[0.7]
+                      tracking-[-0.12em]
+                    `
+              }
+            `}>
             <InteractiveLetter direction="right" delay={0.25}>
               T
             </InteractiveLetter>
@@ -359,10 +480,9 @@ export default function Hero() {
             rotate: videoRotate,
             borderRadius: videoRadius,
           }}
-          className="
+          className={`
             absolute
             left-1/2
-            top-[54%]
             z-20
             -translate-x-1/2
             -translate-y-1/2
@@ -370,9 +490,12 @@ export default function Hero() {
             border
             border-black
             bg-black
-          ">
+
+            ${isMobile ? "top-[56%]" : isTablet ? "top-[55%]" : "top-[54%]"}
+          `}>
           <video
-            src={heroVideo}
+            key={currentVideo}
+            src={currentVideo}
             autoPlay
             muted
             loop
