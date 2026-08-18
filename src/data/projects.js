@@ -1,3 +1,4 @@
+import ProjectImage from "../assets/project1.jpeg";
 export const projects = [
   {
     id: 1,
@@ -5,8 +6,8 @@ export const projects = [
     category: "Motion",
     description:
       "Experimental motion and visual storytelling exploring movement, texture and composition.",
-    image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=85",
+    image: ProjectImage,
+    layout: "tall",
   },
 
   {
@@ -17,6 +18,7 @@ export const projects = [
       "A visual experiment built around light, atmosphere and dynamic movement.",
     image:
       "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=85",
+    layout: "tall",
   },
 
   {
@@ -27,6 +29,7 @@ export const projects = [
       "Editorial-inspired visual compositions combining photography, typography and color.",
     image:
       "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=85",
+    layout: "square",
   },
 
   {
@@ -37,6 +40,7 @@ export const projects = [
       "A study of analog textures, photography and imperfect visual surfaces.",
     image:
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=85",
+    layout: "square",
   },
 
   {
@@ -47,6 +51,7 @@ export const projects = [
       "Dark atmospheric visuals combining light, color and movement.",
     image:
       "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+    layout: "tallWide",
   },
 
   {
@@ -57,6 +62,7 @@ export const projects = [
       "Abstract compositions built from photography, typography and fragmented forms.",
     image:
       "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1200&q=85",
+    layout: "wide",
   },
 
   {
@@ -67,6 +73,7 @@ export const projects = [
       "A visual exploration of human form, space and geometric composition.",
     image:
       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85",
+    layout: "tall",
   },
 
   {
@@ -77,6 +84,7 @@ export const projects = [
       "Exploring bold color combinations and expressive graphic compositions.",
     image:
       "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=85",
+    layout: "square",
   },
 
   {
@@ -87,6 +95,7 @@ export const projects = [
       "A visual study inspired by architecture, urban environments and movement.",
     image:
       "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85",
+    layout: "extraWide",
   },
 
   {
@@ -97,6 +106,7 @@ export const projects = [
       "Photography and motion combined into a series of atmospheric compositions.",
     image:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85",
+    layout: "small",
   },
 
   {
@@ -107,6 +117,7 @@ export const projects = [
       "Experimental forms and lighting inspired by digital environments.",
     image:
       "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=85",
+    layout: "square",
   },
 
   {
@@ -117,5 +128,6 @@ export const projects = [
       "An archival-inspired visual system combining photography and typography.",
     image:
       "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85",
+    layout: "wide",
   },
 ];

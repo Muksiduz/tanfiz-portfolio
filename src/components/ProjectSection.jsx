@@ -6,8 +6,6 @@ import { motion } from "motion/react";
 import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 
-import { projectContainer } from "../animations/projectAnimations";
-
 const categories = ["All", "Motion", "Design", "Branding", "2D"];
 
 export default function ProjectSection() {
@@ -44,24 +42,15 @@ export default function ProjectSection() {
         px-[5vw]
         pb-40
         pt-[18vh]
-        md:px-[8vw]
-        lg:px-[10vw]
+        md:px-[6vw]
+        lg:px-[5.5vw]
       ">
       {/* HEADER */}
 
       <motion.div
-        initial={{
-          opacity: 0,
-          y: 40,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-          amount: 0.2,
-        }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{
           duration: 0.8,
           ease: [0.22, 1, 0.36, 1],
@@ -94,18 +83,9 @@ export default function ProjectSection() {
       {/* CATEGORY NAVIGATION */}
 
       <motion.nav
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-          amount: 0.2,
-        }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{
           duration: 0.7,
           delay: 0.1,
@@ -122,7 +102,7 @@ export default function ProjectSection() {
           border-[#deded9]
           py-4
         ">
-        {categories.map((category, index) => {
+        {categories.map((category) => {
           const active = activeCategory === category;
 
           return (
@@ -149,8 +129,6 @@ export default function ProjectSection() {
                 {category}
               </span>
 
-              {/* ACTIVE LINE */}
-
               <span
                 className={`
                   absolute
@@ -167,28 +145,24 @@ export default function ProjectSection() {
           );
         })}
 
-        {/* PROJECT COUNT */}
-
         <span className="ml-auto hidden font-mono text-[9px] tracking-[0.15em] text-[#9aa0a5] sm:block">
           {String(filteredProjects.length).padStart(2, "0")} PROJECTS
         </span>
       </motion.nav>
 
-      {/* PROJECT GRID */}
+      {/* COLLAGE */}
 
       <motion.div
         key={activeCategory}
-        variants={projectContainer}
-        initial="hidden"
-        animate="visible"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
         className="
-          grid
-          grid-cols-1
-          gap-x-5
-          gap-y-8
-          md:grid-cols-2
-          lg:grid-cols-3
-        ">
+    columns-1
+    gap-3
+    sm:columns-2
+    lg:columns-3
+  ">
         {filteredProjects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}

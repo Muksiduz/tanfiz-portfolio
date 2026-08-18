@@ -1,14 +1,20 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 
-import {
-  projectReveal,
-  projectImage,
-  projectOverlay,
-  projectContent,
-} from "../animations/projectAnimations";
+import { projectReveal, projectImage } from "../animations/projectAnimations";
 
 export default function ProjectCard({ project, index }) {
+  const aspectClasses = {
+    tall: "aspect-[9/16]", // 1080 × 1920
+    wide: "aspect-[16/9]", // 1920 × 1080
+    square: "aspect-square", // 1080 × 1080
+
+    // smaller versions can still use the same layout
+    smallTall: "aspect-[9/16]",
+    smallWide: "aspect-[16/9]",
+    smallSquare: "aspect-square",
+  };
+
   return (
     <motion.article
       variants={projectReveal}
@@ -16,23 +22,35 @@ export default function ProjectCard({ project, index }) {
       whileInView="visible"
       viewport={{
         once: true,
-        amount: 0.15,
+        amount: 0.1,
       }}
-      className="group relative overflow-hidden bg-neutral-200">
+      className="
+        group
+        mb-3
+        break-inside-avoid
+        overflow-hidden
+        rounded-[16px]
+        bg-neutral-200
+      ">
       <Link
         to={`/project/${project.id}`}
         className="block"
         aria-label={`View ${project.title} project`}>
-        {/* IMAGE CONTAINER */}
-        <div className="relative h-[480px] overflow-hidden">
-          {/* PROJECT IMAGE */}
+        <div
+          className={`
+            relative
+            overflow-hidden
+            ${aspectClasses[project.layout] || "aspect-square"}
+          `}>
+          {/* IMAGE */}
+
           <motion.img
             src={project.image}
             alt={project.title}
             variants={projectImage}
             initial="rest"
             whileHover="hover"
-            loading={index < 3 ? "eager" : "lazy"}
+            loading={index < 4 ? "eager" : "lazy"}
             decoding="async"
             className="
               absolute
@@ -40,45 +58,54 @@ export default function ProjectCard({ project, index }) {
               h-full
               w-full
               object-cover
+              transition-transform
+              duration-700
+              ease-out
+              group-hover:scale-[1.04]
             "
           />
 
-          {/* IMAGE OVERLAY */}
-          <motion.div
-            initial="rest"
-            whileHover="hover"
-            variants={projectOverlay}
+          {/* OVERLAY */}
+
+          <div
             className="
               pointer-events-none
               absolute
               inset-0
               bg-gradient-to-t
-              from-black/75
+              from-black/70
               via-black/10
               to-transparent
+              opacity-0
+              transition-opacity
+              duration-500
+              group-hover:opacity-100
             "
           />
 
-          {/* PROJECT CONTENT */}
-          <motion.div
-            initial="rest"
-            whileHover="hover"
-            variants={projectContent}
+          {/* CONTENT */}
+
+          <div
             className="
               pointer-events-none
               absolute
               bottom-0
               left-0
               right-0
-              p-6
+              translate-y-3
+              p-5
               text-white
+              opacity-0
+              transition-all
+              duration-500
+              group-hover:translate-y-0
+              group-hover:opacity-100
             ">
-            {/* CATEGORY */}
             <p
               className="
-                mb-2
+                mb-1.5
                 font-mono
-                text-[9px]
+                text-[8px]
                 uppercase
                 tracking-[0.25em]
                 text-white/70
@@ -86,42 +113,28 @@ export default function ProjectCard({ project, index }) {
               {project.category}
             </p>
 
-            {/* TITLE */}
             <h3
               className="
-                text-xl
-                font-light
-                tracking-tight
+                text-lg
+                font-medium
+                tracking-[-0.02em]
               ">
               {project.title}
             </h3>
+          </div>
 
-            {/* DESCRIPTION */}
-            {project.description && (
-              <p
-                className="
-                  mt-2
-                  max-w-xs
-                  text-xs
-                  leading-relaxed
-                  text-white/70
-                ">
-                {project.description}
-              </p>
-            )}
-          </motion.div>
+          {/* NUMBER */}
 
-          {/* PROJECT NUMBER */}
           <span
             className="
               pointer-events-none
               absolute
-              right-5
-              top-5
+              right-4
+              top-4
               font-mono
-              text-[9px]
+              text-[8px]
               tracking-[0.15em]
-              text-white/70
+              text-white/80
               opacity-0
               transition-opacity
               duration-500

@@ -98,15 +98,19 @@ export default function Header() {
               key={item.label}
               to={item.href}
               className="
-          text-[15px]
-          font-medium
-          uppercase
-          tracking-[0.02em]
-          text-neutral-900
-          transition-all
-          duration-300
-          hover:text-neutral-500
-        ">
+  inline-flex
+  items-center
+  px-3
+  py-3
+  text-[15px]
+  font-medium
+  uppercase
+  tracking-[0.02em]
+  text-neutral-900
+  transition-all
+  duration-300
+  hover:text-neutral-500
+">
               {item.label}
             </Link>
           ))}
@@ -126,6 +130,7 @@ export default function Header() {
               rel="noreferrer"
               className="
           flex
+          px-3 py-3
           items-center
           justify-center
           text-neutral-800

@@ -135,47 +135,8 @@ export default function ProjectDetail() {
       ===================================================== */}
 
       {detail.video && (
-        <section className="px-[5vw] md:px-[10vw]">
-          <div className="mx-auto max-w-6xl">
-            <div className="relative aspect-video overflow-hidden bg-black">
-              <iframe
-                src={detail.video.url}
-                title={`${detail.title} video`}
-                className="absolute inset-0 h-full w-full"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </section>
+        <VideoSection video={detail.video} title={detail.title} />
       )}
-
-      {/* =====================================================
-          HERO IMAGE
-      ===================================================== */}
-
-      {/* {detail.heroImage && (
-        <section className="px-[5vw] py-20 md:px-[10vw] md:py-32">
-          <div className="mx-auto max-w-6xl">
-            <motion.img
-              src={detail.heroImage}
-              alt={`${detail.title} hero`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{
-                once: true,
-                amount: 0.1,
-              }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="block aspect-[16/9] w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </section>
-      )} */}
 
       {/* =====================================================
           MOODBOARD / REFERENCES
@@ -270,6 +231,44 @@ export default function ProjectDetail() {
 }
 
 /* =========================================================
+   VIDEO
+========================================================= */
+
+function VideoSection({ video, title }) {
+  const aspectClasses = {
+    "16/9": "aspect-[16/9] w-full max-w-4xl",
+    "9/16": "aspect-[9/16] w-[45vw] max-w-[520px] min-w-[280px]",
+    "1/1": "aspect-square w-full max-w-2xl",
+  };
+
+  const aspectClass = aspectClasses[video.aspect] || "aspect-[16/9]";
+
+  return (
+    <section className="px-[5vw] md:px-[10vw]">
+      <div className="mx-auto max-w-6xl">
+        <div
+          className={`
+            relative
+            mx-auto
+            overflow-hidden
+            bg-black
+            ${aspectClass}
+          `}>
+          <iframe
+            src={video.url}
+            title={`${title} video`}
+            className="absolute inset-0 h-full w-full border-0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
    IMAGE GRID
 ========================================================= */
 
@@ -287,14 +286,8 @@ function ImageGrid({ images, title, type }) {
       {images.map((image, index) => (
         <motion.div
           key={`${image}-${index}`}
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{
             once: true,
             amount: 0.1,
