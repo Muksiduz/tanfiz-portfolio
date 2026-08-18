@@ -1,5 +1,32 @@
 import ProjectImage from "../assets/project1.jpeg";
+
+import BauhausLong from "../assets/1/Bauhaus Long.jpg";
+import BrutalistArchitecture from "../assets/1/Brutalist Architecture.jpg";
+import CheddarRoughWork from "../assets/1/cheddar rough work.jpg";
+import CycleRoughWork from "../assets/1/cycle rough work.jpg";
+import Delusive from "../assets/1/Delusive.jpg";
+import DigitalEscape from "../assets/1/Digital Escape.jpg";
+import HighSierraMusicFest from "../assets/1/High Sierra Music Fest.jpg";
+import HvdRowdyFont from "../assets/1/hvd rowdy font.jpg";
+import KilnSansRough from "../assets/1/kiln sans rough.jpg";
+import LilWayne from "../assets/1/Lil Wayne.jpg";
+import MeowSRamenBowl from "../assets/1/Meow_s Ramen Bowl.jpg";
+import Order from "../assets/1/Order.jpg";
+import P22Stanyan from "../assets/1/p22 stanyan.jpg";
+import Perish from "../assets/1/Perish.jpg";
+import RetroCopy from "../assets/1/Retro copy.jpg";
+import SouthernBarnFont from "../assets/1/southern barn font.jpg";
+import UrbanDecay from "../assets/1/Urban Decay.jpg";
+import YayoiKusama from "../assets/1/Yayoi Kusama.jpg";
+
+import NewYearPurbashree01 from "../assets/2/New Year with Purbashree - Static 01.jpg";
+import NewYearPurbashree02 from "../assets/2/New Year with Purbashree - Static 02.jpg";
+import PurbashreeRepublicDay from "../assets/2/Purbashree_Republic Day.jpg";
+
+import ZenitsuTumbnail from "../assets/zenitsu thumbnail.jpeg";
+
 export const projects = [
+  // MOTION
   {
     id: 1,
     title: "Visual Stories",
@@ -12,122 +39,221 @@ export const projects = [
 
   {
     id: 2,
-    title: "Night Motion",
+    title: "Zenitsu",
     category: "Motion",
     description:
       "A visual experiment built around light, atmosphere and dynamic movement.",
-    image:
-      "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=85",
+    image: ZenitsuTumbnail,
+    layout: "square",
+  },
+
+  // DESIGN
+  {
+    id: 3,
+    title: "Bauhaus Long",
+    category: "Design",
+    description:
+      "A graphic design exploration inspired by Bauhaus geometry, structure and visual balance.",
+    image: BauhausLong,
     layout: "tall",
   },
 
   {
-    id: 3,
-    title: "New Perspectives",
+    id: 4,
+    title: "Brutalist Architecture",
     category: "Design",
     description:
-      "Editorial-inspired visual compositions combining photography, typography and color.",
-    image:
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=85",
-    layout: "square",
-  },
-
-  {
-    id: 4,
-    title: "Analog Dreams",
-    category: "Experimental",
-    description:
-      "A study of analog textures, photography and imperfect visual surfaces.",
-    image:
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=85",
+      "An architectural study exploring brutalist forms, structure, scale and visual composition.",
+    image: BrutalistArchitecture,
     layout: "square",
   },
 
   {
     id: 5,
-    title: "After Dark",
-    category: "Motion",
-    description:
-      "Dark atmospheric visuals combining light, color and movement.",
-    image:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
-    layout: "tallWide",
-  },
-
-  {
-    id: 6,
-    title: "Fragments",
+    title: "Cheddar Rough Work",
     category: "Design",
     description:
-      "Abstract compositions built from photography, typography and fragmented forms.",
-    image:
-      "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1200&q=85",
-    layout: "wide",
-  },
-
-  {
-    id: 7,
-    title: "Human Form",
-    category: "Art Direction",
-    description:
-      "A visual exploration of human form, space and geometric composition.",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85",
-    layout: "tall",
-  },
-
-  {
-    id: 8,
-    title: "Color Studies",
-    category: "Design",
-    description:
-      "Exploring bold color combinations and expressive graphic compositions.",
-    image:
-      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=85",
+      "A rough visual exploration developed through typography, composition and experimental graphic forms.",
+    image: CheddarRoughWork,
     layout: "square",
   },
 
   {
-    id: 9,
-    title: "Urban Motion",
-    category: "Motion",
+    id: 6,
+    title: "Cycle Rough Work",
+    category: "Design",
     description:
-      "A visual study inspired by architecture, urban environments and movement.",
-    image:
-      "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85",
-    layout: "extraWide",
+      "An experimental design study exploring repetition, typography and circular visual movement.",
+    image: CycleRoughWork,
+    layout: "square",
+  },
+
+  {
+    id: 7,
+    title: "Delusive",
+    category: "Design",
+    description:
+      "An abstract visual composition exploring distortion, perception and experimental graphic language.",
+    image: Delusive,
+    layout: "square",
+  },
+
+  {
+    id: 8,
+    title: "Digital Escape",
+    category: "Design",
+    description:
+      "A digital visual experiment combining atmosphere, composition and contemporary graphic design.",
+    image: DigitalEscape,
+    layout: "wide",
+  },
+
+  {
+    id: 9,
+    title: "High Sierra Music Fest",
+    category: "Design",
+    description:
+      "A festival-inspired visual identity exploration combining typography, music culture and graphic composition.",
+    image: HighSierraMusicFest,
+    layout: "tall",
   },
 
   {
     id: 10,
-    title: "Still / Moving",
+    title: "HVD Rowdy",
     category: "Design",
     description:
-      "Photography and motion combined into a series of atmospheric compositions.",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85",
-    layout: "small",
+      "A typographic exploration focused on expressive lettering, form and experimental type design.",
+    image: HvdRowdyFont,
+    layout: "square",
   },
 
   {
     id: 11,
-    title: "Future Forms",
-    category: "Motion",
+    title: "Kiln Sans",
+    category: "Design",
     description:
-      "Experimental forms and lighting inspired by digital environments.",
-    image:
-      "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=85",
+      "A typography study exploring the character, structure and visual personality of a typeface.",
+    image: KilnSansRough,
     layout: "square",
   },
 
   {
     id: 12,
-    title: "The Archive",
-    category: "Art Direction",
+    title: "Lil Wayne",
+    category: "Design",
     description:
-      "An archival-inspired visual system combining photography and typography.",
-    image:
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85",
+      "A graphic composition inspired by music culture, portraiture and expressive visual typography.",
+    image: LilWayne,
+    layout: "tall",
+  },
+
+  {
+    id: 13,
+    title: "Meow's Ramen Bowl",
+    category: "Design",
+    description:
+      "A playful branding exploration combining illustration, typography and food-focused visual design.",
+    image: MeowSRamenBowl,
+    layout: "square",
+  },
+
+  {
+    id: 14,
+    title: "Order",
+    category: "Design",
+    description:
+      "A graphic design study exploring structure, hierarchy, repetition and visual order.",
+    image: Order,
+    layout: "square",
+  },
+
+  {
+    id: 15,
+    title: "P22 Stanyan",
+    category: "Design",
+    description:
+      "A typographic exploration focused on lettering, composition and visual identity.",
+    image: P22Stanyan,
+    layout: "square",
+  },
+
+  {
+    id: 16,
+    title: "Perish",
+    category: "Design",
+    description:
+      "A dark experimental composition exploring typography, atmosphere and visual tension.",
+    image: Perish,
+    layout: "tall",
+  },
+
+  {
+    id: 17,
+    title: "Retro Copy",
+    category: "Design",
+    description:
+      "A retro-inspired graphic study exploring nostalgic typography, composition and visual texture.",
+    image: RetroCopy,
+    layout: "square",
+  },
+
+  {
+    id: 18,
+    title: "Southern Barn",
+    category: "Design",
+    description:
+      "A typographic exploration inspired by traditional signage, lettering and regional visual identity.",
+    image: SouthernBarnFont,
     layout: "wide",
+  },
+
+  {
+    id: 19,
+    title: "Urban Decay",
+    category: "Design",
+    description:
+      "A visual study inspired by urban environments, texture, architecture and contemporary graphic design.",
+    image: UrbanDecay,
+    layout: "wide",
+  },
+
+  {
+    id: 20,
+    title: "Yayoi Kusama",
+    category: "Design",
+    description:
+      "A visual exploration inspired by repetition, pattern, color and contemporary art.",
+    image: YayoiKusama,
+    layout: "square",
+  },
+  {
+    id: 21,
+    title: "New Year with Purbashree — 01",
+    category: "Branding",
+    description:
+      "A festive visual campaign created for Purbashree, exploring celebration, typography and brand-focused composition.",
+    image: NewYearPurbashree01,
+    layout: "square",
+  },
+
+  {
+    id: 22,
+    title: "New Year with Purbashree — 02",
+    category: "Branding",
+    description:
+      "A second visual direction for the Purbashree New Year campaign, combining festive imagery with graphic composition.",
+    image: NewYearPurbashree02,
+    layout: "square",
+  },
+
+  {
+    id: 23,
+    title: "Purbashree — Republic Day",
+    category: "Branding",
+    description:
+      "A Republic Day campaign visual created for Purbashree, combining cultural themes with brand-oriented graphic design.",
+    image: PurbashreeRepublicDay,
+    layout: "square",
   },
 ];

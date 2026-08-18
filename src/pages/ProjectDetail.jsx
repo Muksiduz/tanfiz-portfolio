@@ -131,6 +131,31 @@ export default function ProjectDetail() {
       </section>
 
       {/* =====================================================
+          HERO IMAGE
+      ===================================================== */}
+      {detail.heroImage && (
+        <section className="px-[5vw] pb-20 md:px-[10vw] md:pb-28">
+          <div className="mx-auto max-w-8xl">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="flex justify-center overflow-hidden">
+              <img
+                src={detail.heroImage}
+                alt={detail.title}
+                className="max-h-[75vh] max-w-full object-contain"
+              />
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* =====================================================
           VIDEO
       ===================================================== */}
 

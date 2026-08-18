@@ -9,26 +9,10 @@ import ProjectCard from "./ProjectCard";
 const categories = ["Motion", "Design", "Branding"];
 
 export default function ProjectSection() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Motion");
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === "All") {
-      return projects;
-    }
-
-    return projects.filter((project) => {
-      if (activeCategory === "Design") {
-        return (
-          project.category === "Design" || project.category === "2D Design"
-        );
-      }
-
-      if (activeCategory === "2D") {
-        return project.category === "2D Design";
-      }
-
-      return project.category === activeCategory;
-    });
+    return projects.filter((project) => project.category === activeCategory);
   }, [activeCategory]);
 
   return (
@@ -45,8 +29,6 @@ export default function ProjectSection() {
         md:px-[6vw]
         lg:px-[5.5vw]
       ">
-      {/* HEADER */}
-
       {/* CATEGORY NAVIGATION */}
 
       <motion.nav
@@ -125,11 +107,11 @@ export default function ProjectSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="
-    columns-1
-    gap-3
-    sm:columns-2
-    lg:columns-3
-  ">
+          columns-1
+          gap-3
+          sm:columns-2
+          lg:columns-3
+        ">
         {filteredProjects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
