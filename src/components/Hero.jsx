@@ -173,11 +173,7 @@ export default function Hero() {
 
   const initialVideoWidth = isMobile ? "78vw" : isTablet ? "52vw" : "25vw";
 
-  const initialVideoHeight = isMobile
-    ? "43.875vw"
-    : isTablet
-      ? "29.25vw"
-      : "28vw";
+  const initialVideoHeight = isMobile ? "30vw" : isTablet ? "29.25vw" : "28vw";
 
   const videoWidth = useTransform(
     scrollYProgress,
@@ -347,18 +343,18 @@ export default function Hero() {
             className={`
               absolute
               whitespace-nowrap
-              font-sans
-              font-black
-              italic
+              font-[MyCustomFont]
+              font-regular
+              
               uppercase
-              text-[#08c6ed]
+              text-[#de2832]
 
               ${
                 isMobile
                   ? `
-                    left-[-6vw]
-                    top-[11vh]
-                    text-[31vw]
+                    left-[-2vw]
+                    top-[14vh]
+                    text-[38vw]
                     leading-[0.68]
                     tracking-[-0.065em]
                   `
@@ -371,11 +367,11 @@ export default function Hero() {
                       tracking-[-0.07em]
                     `
                     : `
-                      left-[-2vw]
+                      left-[2vw]
                       top-[10vh]
                       text-[24vw]
                       leading-[0.72]
-                      tracking-[-0.055em]
+                      tracking-[-0.008em]
                     `
               }
             `}>
@@ -408,17 +404,17 @@ export default function Hero() {
             className={`
               absolute
               whitespace-nowrap
-              font-sans
-              font-black
-              italic
+              font-[MyCustomFont]
+              font-regular
+             
               uppercase
-              text-[#08c6ed]
+              text-[#de2832]
 
               ${
                 isMobile
                   ? `
-                    bottom-[3vh]
-                    right-[-7vw]
+                    bottom-[20vh]
+                    right-[6vw]
                     text-[28vw]
                     leading-[0.68]
                     tracking-[-0.065em]
@@ -434,9 +430,9 @@ export default function Hero() {
                     : `
                       bottom-[1vh]
                       right-[-1vw]
-                      text-[23vw]
+                      text-[24vw]
                       leading-[0.7]
-                      tracking-[-0.12em]
+                       tracking-[0.002em]
                     `
               }
             `}>
@@ -491,7 +487,7 @@ export default function Hero() {
             border-black
             bg-black
 
-            ${isMobile ? "top-[56%]" : isTablet ? "top-[55%]" : "top-[54%]"}
+            ${isMobile ? "top-[48%]" : isTablet ? "top-[55%]" : "top-[54%]"}
           `}>
           <video
             key={currentVideo}

@@ -49,36 +49,19 @@ export default function Header() {
   ================================================= */}
 
         <Link to="/" onClick={closeMenu} className="shrink-0">
-          <div
+          <img
+            src="/logo.png"
+            alt="ST"
             className="
-        flex
-        h-[42px]
-        w-[56px]
-        rotate-[-7deg]
-        items-center
-        justify-center
-        border-[3px]
-        border-neutral-800
-        bg-white
+      h-[48px]
+      w-auto
+      rotate-[-8deg]
+      object-contain
 
-        md:h-[48px]
-        md:w-[64px]
-        md:border-[4px]
-      ">
-            <span
-              className="
-          text-[20px]
-          font-black
-          tracking-[-0.15em]
-          text-neutral-800
-
-          md:text-[24px]
-        ">
-              ST
-            </span>
-          </div>
+      md:h-[68px]
+    "
+          />
         </Link>
-
         {/* =================================================
       CENTER — DESKTOP NAVIGATION
   ================================================= */}

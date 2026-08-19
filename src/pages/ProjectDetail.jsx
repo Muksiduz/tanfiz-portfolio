@@ -1,14 +1,28 @@
 // src/pages/ProjectDetail.jsx
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "motion/react";
+import { useEffect } from "react";
 
 import { projects } from "../data/projects";
 import { projectDetails } from "../data/projectDetails";
 
 export default function ProjectDetail() {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
+
+  // Get the category that the user came from
+  const category = searchParams.get("category") || "Motion";
+
+  // Always start the project page from the top
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [id]);
 
   const project = projects.find((project) => String(project.id) === String(id));
 
@@ -22,7 +36,9 @@ export default function ProjectDetail() {
             Project not found
           </p>
 
-          <Link to="/" className="mt-6 inline-block text-sm underline">
+          <Link
+            to={`/?category=${category}`}
+            className="mt-6 inline-block text-sm underline">
             Back to projects
           </Link>
         </div>
@@ -38,7 +54,7 @@ export default function ProjectDetail() {
 
       <section className="px-[5vw] pb-20 pt-6 md:px-[10vw] md:pt-40">
         <Link
-          to="/"
+          to={`/?category=${category}`}
           className="
             mb-20
             inline-flex
@@ -133,6 +149,7 @@ export default function ProjectDetail() {
       {/* =====================================================
           HERO IMAGE
       ===================================================== */}
+
       {detail.heroImage && (
         <section className="px-[5vw] pb-20 md:px-[10vw] md:pb-28">
           <div className="mx-auto max-w-8xl">
@@ -233,7 +250,7 @@ export default function ProjectDetail() {
             pt-8
           ">
           <Link
-            to="/"
+            to={`/?category=${category}`}
             className="
               font-mono
               text-[9px]
