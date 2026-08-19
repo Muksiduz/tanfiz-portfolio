@@ -107,11 +107,12 @@ export default function ProjectSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="
-          columns-1
-          gap-3
-          sm:columns-2
-          lg:columns-3
-        ">
+  grid
+  grid-cols-1
+  sm:grid-cols-2
+  lg:grid-cols-3
+  gap-3
+">
         {filteredProjects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}

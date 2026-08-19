@@ -5,16 +5,38 @@ import { projectReveal, projectImage } from "../animations/projectAnimations";
 
 export default function ProjectCard({ project, index }) {
   const aspectClasses = {
-    tall: "aspect-[9/16]", // 1080 × 1920
-    wide: "aspect-[16/9]", // 1920 × 1080
-    square: "aspect-square", // 1080 × 1080
+    // ==========================================
+    // MAIN SIZES
+    // ==========================================
 
-    // smaller versions can still use the same layout
-    smallTall: "aspect-[9/16]",
-    smallWide: "aspect-[16/9]",
+    // 1080 × 1350
+    portrait: "aspect-[4/5]",
+
+    // 1417 × 1772
+    portraitLong: "aspect-[1417/1772]",
+
+    // 1417 × 2004
+    poster: "aspect-[1417/2004]",
+
+    // 1417 × 1417
+    square: "aspect-square",
+
+    // ==========================================
+    // SMALL VERSIONS
+    // ==========================================
+
+    // Smaller 1080 × 1350 style
+    smallPortrait: "aspect-[4/5]",
+
+    // Smaller 1417 × 1772 style
+    smallPortraitLong: "aspect-[1417/1772]",
+
+    // Smaller 1417 × 2004 style
+    smallPoster: "aspect-[1417/2004]",
+
+    // Smaller square
     smallSquare: "aspect-square",
   };
-
   return (
     <motion.article
       variants={projectReveal}

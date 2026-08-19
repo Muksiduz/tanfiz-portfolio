@@ -1,32 +1,44 @@
 import ProjectImage from "../assets/project1.jpeg";
-
-import BauhausLong from "../assets/1/Bauhaus Long.jpg";
-import BrutalistArchitecture from "../assets/1/Brutalist Architecture.jpg";
-import CheddarRoughWork from "../assets/1/cheddar rough work.jpg";
-import CycleRoughWork from "../assets/1/cycle rough work.jpg";
-import Delusive from "../assets/1/Delusive.jpg";
-import DigitalEscape from "../assets/1/Digital Escape.jpg";
-import HighSierraMusicFest from "../assets/1/High Sierra Music Fest.jpg";
-import HvdRowdyFont from "../assets/1/hvd rowdy font.jpg";
-import KilnSansRough from "../assets/1/kiln sans rough.jpg";
-import LilWayne from "../assets/1/Lil Wayne.jpg";
-import MeowSRamenBowl from "../assets/1/Meow_s Ramen Bowl.jpg";
-import Order from "../assets/1/Order.jpg";
-import P22Stanyan from "../assets/1/p22 stanyan.jpg";
-import Perish from "../assets/1/Perish.jpg";
-import RetroCopy from "../assets/1/Retro copy.jpg";
-import SouthernBarnFont from "../assets/1/southern barn font.jpg";
-import UrbanDecay from "../assets/1/Urban Decay.jpg";
-import YayoiKusama from "../assets/1/Yayoi Kusama.jpg";
-
-import NewYearPurbashree01 from "../assets/2/New Year with Purbashree - Static 01.jpg";
-import NewYearPurbashree02 from "../assets/2/New Year with Purbashree - Static 02.jpg";
-import PurbashreeRepublicDay from "../assets/2/Purbashree_Republic Day.jpg";
-
 import ZenitsuTumbnail from "../assets/zenitsu thumbnail.jpeg";
 
+// DESIGN
+import BCHoroscopeCarousel1 from "../assets/1/BC_Horoscope Carousal_1.avif";
+import BCHoroscopeCarousel3 from "../assets/1/BC_Horoscope Carousal_3.avif";
+import BCHoroscopeCarousel4 from "../assets/1/BC_Horoscope Carousal_4.avif";
+import BCHoroscopeCarousel5 from "../assets/1/BC_Horoscope Carousal_5.avif";
+
+import BCMeethaCarousal2 from "../assets/1/BC_Meetha Carousal 2 copy.avif";
+import BCMonday from "../assets/1/BC_Monday copy.avif";
+
+import BrutalistArchitecture from "../assets/1/Brutalist Architecture copy.avif";
+import Delusive from "../assets/1/Delusive copy.avif";
+import DigitalEscape from "../assets/1/Digital Escape copy.avif";
+
+import FAXXBetterPeople from "../assets/1/FAXX_Better People copy.avif";
+import FAXXKaamHotaRahega from "../assets/1/FAXX_Kaam hota rahega copy.avif";
+import FAXXOgCreamOnion from "../assets/1/Faxx_og cream onion.jpg copy.avif";
+import FAXXSettle from "../assets/1/FAXX_settle.jpg copy.avif";
+import FAXXWarning from "../assets/1/FAXX_Warning copy.avif";
+
+import HighSierraMusicFest from "../assets/1/High Sierra Music Fest copy.avif";
+import LilWayne from "../assets/1/Lil Wayne copy.avif";
+import MeowSRamenBowl from "../assets/1/Meow_s Ramen Bowl.avif";
+
+import NewYearPurbashree02 from "../assets/1/New Year with Purbashree - Static 02 copy.avif";
+
+import Order from "../assets/1/Order copy.avif";
+import Perish from "../assets/1/Perish.avif";
+
+import PurbashreeRepublicDay from "../assets/1/Purbashree_Republic Day copy.avif";
+
+import SouthernBarnFont from "../assets/1/southern barn font.avif";
+import UrbanDecay from "../assets/1/Urban Decay copy.avif";
+
 export const projects = [
+  // =========================================================
   // MOTION
+  // =========================================================
+
   {
     id: 1,
     title: "Visual Stories",
@@ -47,16 +59,9 @@ export const projects = [
     layout: "square",
   },
 
+  // =========================================================
   // DESIGN
-  {
-    id: 3,
-    title: "Bauhaus Long",
-    category: "Design",
-    description:
-      "A graphic design exploration inspired by Bauhaus geometry, structure and visual balance.",
-    image: BauhausLong,
-    layout: "tall",
-  },
+  // =========================================================
 
   {
     id: 4,
@@ -65,195 +70,203 @@ export const projects = [
     description:
       "An architectural study exploring brutalist forms, structure, scale and visual composition.",
     image: BrutalistArchitecture,
-    layout: "square",
+    layout: "tall",
   },
 
   {
     id: 5,
-    title: "Cheddar Rough Work",
+    title: "Delusive",
     category: "Design",
     description:
-      "A rough visual exploration developed through typography, composition and experimental graphic forms.",
-    image: CheddarRoughWork,
-    layout: "square",
+      "A visual design exploration focused on atmosphere, composition and typography.",
+    image: Delusive,
+    layout: "tall",
+  },
+  {
+    id: 20,
+    title: "Urban Decay",
+    category: "Design",
+    description:
+      "A visual exploration inspired by urban environments, texture and graphic composition.",
+    image: UrbanDecay,
+    layout: "tall",
   },
 
   {
     id: 6,
-    title: "Cycle Rough Work",
+    title: "Digital Escape",
     category: "Design",
     description:
-      "An experimental design study exploring repetition, typography and circular visual movement.",
-    image: CycleRoughWork,
-    layout: "square",
+      "An experimental digital composition exploring visual language and modern aesthetics.",
+    image: DigitalEscape,
+    layout: "tall",
   },
 
   {
     id: 7,
-    title: "Delusive",
+    title: "FAXX — Better People",
     category: "Design",
     description:
-      "An abstract visual composition exploring distortion, perception and experimental graphic language.",
-    image: Delusive,
-    layout: "square",
+      "A graphic design project exploring bold typography, composition and visual identity.",
+    image: FAXXBetterPeople,
+    layout: "tall",
   },
 
   {
     id: 8,
-    title: "Digital Escape",
+    title: "FAXX — Kaam Hota Rahega",
     category: "Design",
     description:
-      "A digital visual experiment combining atmosphere, composition and contemporary graphic design.",
-    image: DigitalEscape,
-    layout: "wide",
+      "A typographic visual exploring bold messaging and contemporary graphic design.",
+    image: FAXXKaamHotaRahega,
+    layout: "tall",
   },
 
   {
     id: 9,
-    title: "High Sierra Music Fest",
+    title: "FAXX — OG Cream Onion",
     category: "Design",
     description:
-      "A festival-inspired visual identity exploration combining typography, music culture and graphic composition.",
-    image: HighSierraMusicFest,
+      "A packaging and graphic design exploration built around bold visual composition.",
+    image: FAXXOgCreamOnion,
     layout: "tall",
   },
 
   {
     id: 10,
-    title: "HVD Rowdy",
+    title: "FAXX — Settle",
     category: "Design",
     description:
-      "A typographic exploration focused on expressive lettering, form and experimental type design.",
-    image: HvdRowdyFont,
-    layout: "square",
+      "A graphic composition exploring typography, layout and visual hierarchy.",
+    image: FAXXSettle,
+    layout: "tall",
   },
 
   {
     id: 11,
-    title: "Kiln Sans",
+    title: "FAXX — Warning",
     category: "Design",
     description:
-      "A typography study exploring the character, structure and visual personality of a typeface.",
-    image: KilnSansRough,
-    layout: "square",
-  },
-
-  {
-    id: 12,
-    title: "Lil Wayne",
-    category: "Design",
-    description:
-      "A graphic composition inspired by music culture, portraiture and expressive visual typography.",
-    image: LilWayne,
+      "A bold graphic design piece exploring visual contrast and typography.",
+    image: FAXXWarning,
     layout: "tall",
   },
 
   {
     id: 13,
-    title: "Meow's Ramen Bowl",
+    title: "Lil Wayne",
     category: "Design",
     description:
-      "A playful branding exploration combining illustration, typography and food-focused visual design.",
-    image: MeowSRamenBowl,
-    layout: "square",
+      "A music-focused graphic composition exploring imagery, typography and visual identity.",
+    image: LilWayne,
+    layout: "tall",
   },
 
   {
     id: 14,
-    title: "Order",
+    title: "Meow's Ramen Bowl",
     category: "Design",
-    description:
-      "A graphic design study exploring structure, hierarchy, repetition and visual order.",
-    image: Order,
-    layout: "square",
+    description: "A playful food branding and graphic design exploration.",
+    image: MeowSRamenBowl,
+    layout: "tall",
   },
 
   {
     id: 15,
-    title: "P22 Stanyan",
+    title: "New Year with Purbashree",
     category: "Design",
     description:
-      "A typographic exploration focused on lettering, composition and visual identity.",
-    image: P22Stanyan,
-    layout: "square",
+      "A promotional social media design created for a New Year campaign.",
+    image: NewYearPurbashree02,
+    layout: "tall",
   },
 
   {
     id: 16,
-    title: "Perish",
+    title: "Order",
     category: "Design",
     description:
-      "A dark experimental composition exploring typography, atmosphere and visual tension.",
-    image: Perish,
+      "An experimental graphic design piece exploring structure, typography and composition.",
+    image: Order,
     layout: "tall",
   },
 
   {
     id: 17,
-    title: "Retro Copy",
+    title: "Perish",
     category: "Design",
     description:
-      "A retro-inspired graphic study exploring nostalgic typography, composition and visual texture.",
-    image: RetroCopy,
-    layout: "square",
+      "An experimental visual exploring mood, typography and graphic composition.",
+    image: Perish,
+    layout: "tall",
   },
 
   {
     id: 18,
-    title: "Southern Barn",
+    title: "Purbashree — Republic Day",
     category: "Design",
     description:
-      "A typographic exploration inspired by traditional signage, lettering and regional visual identity.",
-    image: SouthernBarnFont,
-    layout: "wide",
+      "A Republic Day promotional design exploring patriotic visual communication.",
+    image: PurbashreeRepublicDay,
+    layout: "tall",
   },
 
-  {
-    id: 19,
-    title: "Urban Decay",
-    category: "Design",
-    description:
-      "A visual study inspired by urban environments, texture, architecture and contemporary graphic design.",
-    image: UrbanDecay,
-    layout: "wide",
-  },
-
-  {
-    id: 20,
-    title: "Yayoi Kusama",
-    category: "Design",
-    description:
-      "A visual exploration inspired by repetition, pattern, color and contemporary art.",
-    image: YayoiKusama,
-    layout: "square",
-  },
   {
     id: 21,
-    title: "New Year with Purbashree — 01",
-    category: "Branding",
+    title: "BC Horoscope — Carousel 1",
+    category: "Design",
     description:
-      "A festive visual campaign created for Purbashree, exploring celebration, typography and brand-focused composition.",
-    image: NewYearPurbashree01,
-    layout: "square",
+      "A social media carousel design exploring astrology and visual storytelling.",
+    image: BCHoroscopeCarousel1,
+    layout: "tall",
   },
 
   {
     id: 22,
-    title: "New Year with Purbashree — 02",
-    category: "Branding",
+    title: "BC Horoscope — Carousel 3",
+    category: "Design",
     description:
-      "A second visual direction for the Purbashree New Year campaign, combining festive imagery with graphic composition.",
-    image: NewYearPurbashree02,
-    layout: "square",
+      "A horoscope carousel design focused on visual communication and composition.",
+    image: BCHoroscopeCarousel3,
+    layout: "tall",
   },
 
   {
     id: 23,
-    title: "Purbashree — Republic Day",
-    category: "Branding",
+    title: "BC Horoscope — Carousel 4",
+    category: "Design",
     description:
-      "A Republic Day campaign visual created for Purbashree, combining cultural themes with brand-oriented graphic design.",
-    image: PurbashreeRepublicDay,
-    layout: "square",
+      "A social media carousel exploring astrology through graphic design.",
+    image: BCHoroscopeCarousel4,
+    layout: "tall",
+  },
+
+  {
+    id: 24,
+    title: "BC Horoscope — Carousel 5",
+    category: "Design",
+    description: "A continuation of the BC Horoscope visual series.",
+    image: BCHoroscopeCarousel5,
+    layout: "tall",
+  },
+
+  {
+    id: 25,
+    title: "BC Meetha — Carousel 2",
+    category: "Design",
+    description:
+      "A social media design exploring visual storytelling and branded communication.",
+    image: BCMeethaCarousal2,
+    layout: "tall",
+  },
+
+  {
+    id: 26,
+    title: "BC Monday",
+    category: "Design",
+    description:
+      "A branded social media design focused on typography and visual communication.",
+    image: BCMonday,
+    layout: "tall",
   },
 ];
