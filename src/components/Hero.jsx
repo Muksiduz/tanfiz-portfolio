@@ -6,6 +6,8 @@ import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import heroVideo from "../assets/heroVideo.mp4";
 import heroVideoMobile from "../assets/heroVideo.mp4";
 
+import heroBackground from "../assets/projects/back.jpeg";
+
 // ============================================================
 // INTERACTIVE LETTER
 // ============================================================
@@ -300,11 +302,17 @@ export default function Hero() {
       ref={heroRef}
       data-no-draw
       className={`
-        relative
-        z-0
-        ${heroHeight}
-        bg-[#f8f7f2]
-      `}>
+    relative
+    z-0
+    ${heroHeight}
+    bg-cover
+    bg-left-top
+    bg-no-repeat
+    bg-fixed
+  `}
+      style={{
+        backgroundImage: `url(${heroBackground})`,
+      }}>
       {/* ====================================================
           STICKY VIEWPORT
       ==================================================== */}
@@ -313,7 +321,7 @@ export default function Hero() {
         className="
           sticky
           top-0
-          h-[100svh]
+          h-[100vh]
           w-full
           overflow-hidden
         ">
@@ -343,7 +351,7 @@ export default function Hero() {
             className={`
               absolute
               whitespace-nowrap
-               font-display
+               font-custom
               font-black
               
               uppercase
@@ -370,8 +378,8 @@ export default function Hero() {
                       left-[2vw]
                       top-[10vh]
                       text-[24vw]
-                      leading-[0.92]
-                      tracking-[-0.070em]
+                      leading-[0.99]
+                      tracking-[0.009em]
                     `
               }
             `}>
@@ -404,7 +412,7 @@ export default function Hero() {
             className={`
               absolute
               whitespace-nowrap
-              font-display
+              font-custom
               font-black
              
               uppercase
@@ -431,8 +439,8 @@ export default function Hero() {
                       bottom-[1vh]
                       right-[-1vw]
                       text-[24vw]
-                      leading-[0.7]
-                       tracking-[-0.080em]
+                      leading-[0.6]
+                       tracking-[0.009em]
                     `
               }
             `}>
@@ -503,6 +511,99 @@ export default function Hero() {
               object-cover
             "
           />
+        </motion.div>
+        {/* ==================================================
+    ROLE / INTRO TEXT
+================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.9,
+            delay: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className={`
+    absolute
+    z-30
+    left-[4vw]
+    bottom-[7vh]
+    select-none
+    ${isMobile ? "scale-[0.85] origin-left" : ""}
+  `}>
+          <div className="flex items-start gap-2">
+            {/* SMALL STAR / SYMBOL */}
+            <motion.svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              className="mt-[2px] shrink-0"
+              initial={{ opacity: 0, rotate: -45, scale: 0 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 1,
+                ease: [0.22, 1, 0.36, 1],
+              }}>
+              <path
+                d="M6 0.8L7.05 4.95L11.2 6L7.05 7.05L6 11.2L4.95 7.05L0.8 6L4.95 4.95L6 0.8Z"
+                fill="currentColor"
+              />
+            </motion.svg>
+
+            <div>
+              {/* TEXT */}
+              <div
+                className="
+          font-mono
+          text-[18px]
+          font-medium
+          uppercase
+          leading-[1.35]
+          tracking-[0.08em]
+          text-[#26313d]
+        ">
+                <div>MOTION DESIGNER</div>
+                <div>BRANDING ENTHUSIAST</div>
+                <div>VISUAL STORYTELLER</div>
+              </div>
+
+              {/* ANIMATED UNDERLINE */}
+              <svg
+                width="100"
+                height="8"
+                viewBox="0 0 100 8"
+                fill="none"
+                className="mt-1">
+                <motion.path
+                  d="M1 4.5C24 3.2 51 5.8 99 3.5"
+                  stroke="#26313d"
+                  strokeWidth="1"
+                  initial={{
+                    pathLength: 0,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    pathLength: 1,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 1.15,
+                    ease: "easeOut",
+                  }}
+                />
+              </svg>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
