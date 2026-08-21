@@ -587,7 +587,7 @@ export default function Hero() {
           uppercase
           leading-[1.35]
           tracking-[0.08em]
-          text-[#9aa0a5]
+          text-[#26313d]
         ">
                 <div>MOTION DESIGNER</div>
                 <div>BRANDING ENTHUSIAST</div>
