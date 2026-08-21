@@ -306,7 +306,7 @@ export default function Hero() {
     z-0
     ${heroHeight}
     bg-cover
-    bg-left-top
+    bg-[position:left_-20px]
     bg-no-repeat
     bg-fixed
   `}
@@ -541,17 +541,35 @@ export default function Hero() {
           <div className="flex items-start gap-2">
             {/* SMALL STAR / SYMBOL */}
             <motion.svg
-              width="12"
-              height="12"
+              width="16"
+              height="16"
               viewBox="0 0 12 12"
               fill="none"
-              className="mt-[2px] shrink-0"
-              initial={{ opacity: 0, rotate: -45, scale: 0 }}
-              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              className="mt-[1px] shrink-0"
+              initial={{ opacity: 0, rotate: -90, scale: 0 }}
+              animate={{
+                opacity: 1,
+                rotate: [0, 180, 360],
+                scale: [1, 1.35, 1],
+              }}
               transition={{
-                duration: 0.6,
-                delay: 1,
-                ease: [0.22, 1, 0.36, 1],
+                opacity: {
+                  duration: 0.6,
+                  delay: 1,
+                  ease: [0.22, 1, 0.36, 1],
+                },
+                rotate: {
+                  duration: 3,
+                  delay: 1.6,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+                scale: {
+                  duration: 1.8,
+                  delay: 1.6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
               }}>
               <path
                 d="M6 0.8L7.05 4.95L11.2 6L7.05 7.05L6 11.2L4.95 7.05L0.8 6L4.95 4.95L6 0.8Z"
@@ -569,7 +587,7 @@ export default function Hero() {
           uppercase
           leading-[1.35]
           tracking-[0.08em]
-          text-[#26313d]
+          text-[#9aa0a5]
         ">
                 <div>MOTION DESIGNER</div>
                 <div>BRANDING ENTHUSIAST</div>
@@ -585,7 +603,7 @@ export default function Hero() {
                 className="mt-1">
                 <motion.path
                   d="M1 4.5C24 3.2 51 5.8 99 3.5"
-                  stroke="#26313d"
+                  stroke="#9aa0a5"
                   strokeWidth="1"
                   initial={{
                     pathLength: 0,

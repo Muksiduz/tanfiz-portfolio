@@ -37,9 +37,10 @@ export default function Header() {
     w-full
     items-center
     justify-between
-    bg-white/95
+    bg-white
     px-[5vw]
     backdrop-blur-sm
+    border-2 border-gray-300
 
     md:h-[98px]
     md:px-[3vw]
@@ -76,27 +77,40 @@ export default function Header() {
       gap-6
       md:flex
     ">
-          {navigation.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              className="
-  inline-flex
-  items-center
-  px-3
-  py-3
-  text-[20px]
-  font-mono
-  font-medium
-  uppercase
-  tracking-[0.06em]
-  text-neutral-900
-  transition-all
-  duration-300
-  hover:text-neutral-500
-">
-              {item.label}
-            </Link>
+          {navigation.map((item, index) => (
+            <div key={item.label} className="flex items-center gap-6">
+              <Link
+                to={item.href}
+                className="
+        inline-flex
+        items-center
+        px-3
+        py-3
+        text-[20px]
+        font-mono
+        font-medium
+        uppercase
+        tracking-[0.06em]
+        text-neutral-900
+        transition-all
+        duration-300
+        hover:text-neutral-500
+      ">
+                {item.label}
+              </Link>
+
+              {index < navigation.length - 1 && (
+                <span
+                  className="
+          h-[13px]
+          w-[13px]
+          shrink-0
+          rounded-full
+          bg-[#de2832]
+        "
+                />
+              )}
+            </div>
           ))}
         </nav>
 
