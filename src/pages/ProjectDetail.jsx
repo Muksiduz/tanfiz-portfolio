@@ -36,9 +36,7 @@ export default function ProjectDetail() {
             Project not found
           </p>
 
-          <Link
-            to={`/?category=${category}`}
-            className="mt-6 inline-block text-sm underline">
+          <Link to={`/`} className="mt-6 inline-block text-sm underline">
             Back to projects
           </Link>
         </div>
@@ -52,9 +50,21 @@ export default function ProjectDetail() {
           HEADER
       ===================================================== */}
 
-      <section className="px-[5vw] pb-20 pt-6 md:px-[10vw] md:pt-40">
+      <section
+        id="projects"
+        className="
+    relative
+    z-10
+    min-h-screen
+    bg-[#fafaf8]
+    px-[5vw]
+    pb-20
+    pt-6
+    md:px-[10vw]
+    md:pt-10
+  ">
         <Link
-          to={`/?category=${category}`}
+          to={`/`}
           className="
             mb-20
             inline-flex

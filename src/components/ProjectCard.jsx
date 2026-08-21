@@ -1,42 +1,26 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-
 import { projectReveal, projectImage } from "../animations/projectAnimations";
 
 export default function ProjectCard({ project, index }) {
   const aspectClasses = {
-    // ==========================================
-    // MAIN SIZES
-    // ==========================================
-
-    // 1080 × 1350
     portrait: "aspect-[4/5]",
-
-    // 1417 × 1772
     portraitLong: "aspect-[1417/1772]",
-
-    // 1417 × 2004
     poster: "aspect-[1417/2004]",
-
-    // 1417 × 1417
     square: "aspect-square",
 
-    // ==========================================
-    // SMALL VERSIONS
-    // ==========================================
-
-    // Smaller 1080 × 1350 style
     smallPortrait: "aspect-[4/5]",
-
-    // Smaller 1417 × 1772 style
     smallPortraitLong: "aspect-[1417/1772]",
-
-    // Smaller 1417 × 2004 style
     smallPoster: "aspect-[1417/2004]",
-
-    // Smaller square
     smallSquare: "aspect-square",
   };
+
+  const handleProjectClick = () => {
+    sessionStorage.setItem("projectsScrollPosition", String(window.scrollY));
+
+    sessionStorage.setItem("projectsCategory", project.category);
+  };
+
   return (
     <motion.article
       variants={projectReveal}
@@ -56,6 +40,7 @@ export default function ProjectCard({ project, index }) {
       ">
       <Link
         to={`/project/${project.id}`}
+        onClick={handleProjectClick}
         className="block"
         aria-label={`View ${project.title} project`}>
         <div
@@ -65,7 +50,6 @@ export default function ProjectCard({ project, index }) {
             ${aspectClasses[project.layout] || "aspect-square"}
           `}>
           {/* IMAGE */}
-
           <motion.img
             src={project.image}
             alt={project.title}
@@ -88,7 +72,6 @@ export default function ProjectCard({ project, index }) {
           />
 
           {/* OVERLAY */}
-
           <div
             className="
               pointer-events-none
@@ -106,7 +89,6 @@ export default function ProjectCard({ project, index }) {
           />
 
           {/* CONTENT */}
-
           <div
             className="
               pointer-events-none
@@ -146,7 +128,6 @@ export default function ProjectCard({ project, index }) {
           </div>
 
           {/* NUMBER */}
-
           <span
             className="
               pointer-events-none

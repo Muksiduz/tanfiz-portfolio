@@ -343,8 +343,8 @@ export default function Hero() {
             className={`
               absolute
               whitespace-nowrap
-              font-[MyCustomFont]
-              font-regular
+               font-display
+              font-black
               
               uppercase
               text-[#de2832]
@@ -370,8 +370,8 @@ export default function Hero() {
                       left-[2vw]
                       top-[10vh]
                       text-[24vw]
-                      leading-[0.72]
-                      tracking-[-0.008em]
+                      leading-[0.92]
+                      tracking-[-0.070em]
                     `
               }
             `}>
@@ -404,8 +404,8 @@ export default function Hero() {
             className={`
               absolute
               whitespace-nowrap
-              font-[MyCustomFont]
-              font-regular
+              font-display
+              font-black
              
               uppercase
               text-[#de2832]
@@ -432,7 +432,7 @@ export default function Hero() {
                       right-[-1vw]
                       text-[24vw]
                       leading-[0.7]
-                       tracking-[0.002em]
+                       tracking-[-0.080em]
                     `
               }
             `}>

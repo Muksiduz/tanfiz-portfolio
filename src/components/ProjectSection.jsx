@@ -1,18 +1,50 @@
-// src/components/ProjectSection.jsx
-
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
-
 import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 
 const categories = ["Motion", "Design", "Branding"];
 
 export default function ProjectSection() {
-  const [activeCategory, setActiveCategory] = useState("Motion");
+  const [activeCategory, setActiveCategory] = useState(() => {
+    const savedCategory = sessionStorage.getItem("projectsCategory");
+
+    return categories.includes(savedCategory) ? savedCategory : "Motion";
+  });
 
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => project.category === activeCategory);
+  }, [activeCategory]);
+
+  /*
+   * Restore the exact position after returning
+   * from a project detail page.
+   */
+  useEffect(() => {
+    const savedPosition = sessionStorage.getItem("projectsScrollPosition");
+
+    const savedCategory = sessionStorage.getItem("projectsCategory");
+
+    if (!savedPosition || savedCategory !== activeCategory) {
+      return;
+    }
+
+    const position = Number(savedPosition);
+
+    // Wait until React has rendered the category's cards.
+    const timer = setTimeout(() => {
+      window.scrollTo({
+        top: position,
+        left: 0,
+        behavior: "instant",
+      });
+
+      sessionStorage.removeItem("projectsScrollPosition");
+
+      sessionStorage.removeItem("projectsCategory");
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, [activeCategory]);
 
   return (
@@ -58,17 +90,19 @@ export default function ProjectSection() {
             <button
               key={category}
               type="button"
-              onClick={() => setActiveCategory(category)}
+              onClick={() => {
+                setActiveCategory(category);
+              }}
               className="
-                group
-                relative
-                font-mono
-                text-[18px]
-                uppercase
-                tracking-[0.2em]
-                transition-colors
-                duration-300
-              ">
+        group
+        relative
+        font-mono
+        text-[18px]
+        uppercase
+        tracking-[0.2em]
+        transition-colors
+        duration-300
+      ">
               <span
                 className={
                   active
@@ -80,15 +114,15 @@ export default function ProjectSection() {
 
               <span
                 className={`
-                  absolute
-                  -bottom-[6px]
-                  left-0
-                  h-px
-                  bg-[#242424]
-                  transition-all
-                  duration-300
-                  ${active ? "w-full" : "w-0 group-hover:w-full"}
-                `}
+          absolute
+          -bottom-[6px]
+          left-0
+          h-px
+          bg-[#242424]
+          transition-all
+          duration-300
+          ${active ? "w-full" : "w-0 group-hover:w-full"}
+        `}
               />
             </button>
           );
@@ -107,12 +141,12 @@ export default function ProjectSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="
-  grid
-  grid-cols-1
-  sm:grid-cols-2
-  lg:grid-cols-3
-  gap-3
-">
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          gap-3
+        ">
         {filteredProjects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
