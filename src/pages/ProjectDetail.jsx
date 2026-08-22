@@ -55,13 +55,13 @@ export default function ProjectDetail() {
         className="
     relative
     z-10
-    min-h-screen
+   
     bg-[#fafaf8]
     px-[5vw]
     pb-20
     pt-6
     md:px-[10vw]
-    md:pt-10
+    md:pt-22
   ">
         <Link
           to={`/`}
