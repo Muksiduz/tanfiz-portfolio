@@ -55,7 +55,7 @@ export default function ProjectDetail() {
         className="
     relative
     z-10
-    min-h-screen
+   
     bg-[#fafaf8]
     px-[5vw]
     pb-20

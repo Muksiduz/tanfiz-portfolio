@@ -513,8 +513,8 @@ export default function Hero() {
           />
         </motion.div>
         {/* ==================================================
-    ROLE / INTRO TEXT
-================================================== */}
+             ROLE / INTRO TEXT
+           ================================================== */}
 
         <motion.div
           initial={{
@@ -622,6 +622,160 @@ export default function Hero() {
               </svg>
             </div>
           </div>
+        </motion.div>
+
+        {/* RED CROSS WEBSITE ASSESTS - ANIMATED */}
+
+        <motion.div
+          className="absolute left-[10.3%] bottom-[23.1%]"
+          initial={{
+            opacity: 0,
+            scale: 2.2,
+          }}
+          animate={{
+            opacity: [0, 1, 0.75, 1, 0.8],
+            scale: [2.2, 1, 1.08, 0.96, 1],
+            rotate: [0, 0, 0, 360, 360, 0, 0, -360, -360, 0],
+          }}
+          transition={{
+            opacity: {
+              duration: 1,
+              ease: [0.22, 1, 0.36, 1],
+            },
+            scale: {
+              duration: 1.2,
+              ease: [0.22, 1, 0.36, 1],
+            },
+            rotate: {
+              duration: 8,
+              delay: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}>
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <line
+              x1="60"
+              y1="42"
+              x2="60"
+              y2="78"
+              stroke="#de2832"
+              strokeWidth="4"
+              strokeLinecap="square"
+            />
+
+            <line
+              x1="42"
+              y1="60"
+              x2="78"
+              y2="60"
+              stroke="#de2832"
+              strokeWidth="4"
+              strokeLinecap="square"
+            />
+          </svg>
+        </motion.div>
+
+        {/* RED CROSS ABOVE I  */}
+        <motion.div
+          className="absolute right-[9%] bottom-[33%]"
+          initial={{
+            opacity: 0,
+            scale: 2.2,
+          }}
+          animate={{
+            opacity: [0, 1, 0.75, 1, 0.8],
+            scale: [2.2, 1, 1.08, 0.96, 1],
+            rotate: [0, 0, 0, 360, 360, 0, 0, -360, -360, 0],
+          }}
+          transition={{
+            opacity: {
+              duration: 1,
+              ease: [0.22, 1, 0.36, 1],
+            },
+            scale: {
+              duration: 1.2,
+              ease: [0.22, 1, 0.36, 1],
+            },
+            rotate: {
+              duration: 8,
+              delay: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}>
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <line
+              x1="60"
+              y1="42"
+              x2="60"
+              y2="78"
+              stroke="#de2832"
+              strokeWidth="4"
+              strokeLinecap="square"
+            />
+
+            <line
+              x1="42"
+              y1="60"
+              x2="78"
+              y2="60"
+              stroke="#de2832"
+              strokeWidth="4"
+              strokeLinecap="square"
+            />
+          </svg>
+        </motion.div>
+
+        {/* BLACK CROSS ASSESTS - ANIMATED  */}
+        <motion.div
+          className="absolute left-[23.5%] bottom-[-0.3%]"
+          initial={{
+            opacity: 0,
+            scale: 2.2,
+          }}
+          animate={{
+            opacity: [0, 1, 0.75, 1, 0.8],
+            scale: [2.2, 1, 1.08, 0.96, 1],
+            rotate: [0, 0, 0, 360, 360, 0, 0, -360, -360, 0],
+          }}
+          transition={{
+            opacity: {
+              duration: 1,
+              ease: [0.22, 1, 0.36, 1],
+            },
+            scale: {
+              duration: 1.2,
+              ease: [0.22, 1, 0.36, 1],
+            },
+            rotate: {
+              duration: 8,
+              delay: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}>
+          <svg width="220" height="220" viewBox="0 0 360 360" fill="none">
+            <line
+              x1="180"
+              y1="126"
+              x2="180"
+              y2="234"
+              stroke="#111111"
+              strokeWidth="10"
+              strokeLinecap="square"
+            />
+
+            <line
+              x1="126"
+              y1="180"
+              x2="234"
+              y2="180"
+              stroke="#111111"
+              strokeWidth="10"
+              strokeLinecap="square"
+            />
+          </svg>
         </motion.div>
       </div>
     </section>

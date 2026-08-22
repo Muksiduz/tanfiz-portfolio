@@ -62,9 +62,6 @@ export const projectDetails = {
       url: "https://player.vimeo.com/video/1219150848?badge=0&autopause=0&player_id=0&app_id=58479&loop=1",
     },
 
-    heroImage:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1800&q=90",
-
     moodboard: [
       "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=90",
       "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1200&q=90",
@@ -104,9 +101,6 @@ export const projectDetails = {
       aspect: "1/1",
       url: nightMotionVideo,
     },
-
-    heroImage:
-      "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=90",
 
     moodboard: [
       "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=90",
