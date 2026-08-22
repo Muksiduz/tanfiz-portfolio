@@ -61,7 +61,7 @@ export default function ProjectDetail() {
     pb-20
     pt-6
     md:px-[10vw]
-    md:pt-10
+    md:pt-22
   ">
         <Link
           to={`/`}

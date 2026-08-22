@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import { Menu, X, Globe } from "lucide-react";
 import { FaInstagram, FaYoutube, FaLinkedinIn, FaVimeoV } from "react-icons/fa";
 
+import instagramIcon from "../assets/projects/instagram.png";
+import behanceIcon from "../assets/projects/social.png";
+import linkedinIcon from "../assets/projects/linkdin.png";
+
 import { fadeIn } from "../animations/pageAnimation";
 import { navigation } from "../data/navigation";
 import { socialLinks } from "../data/socialLinks";
@@ -86,11 +90,14 @@ export default function Header() {
         items-center
         px-3
         py-3
-        text-[20px]
-        font-mono
-        font-medium
-        uppercase
-        tracking-[0.06em]
+      
+          font-display
+          text-[18px]
+          font-medium
+          uppercase
+          leading-[1.35]
+          tracking-[0.08em]
+       
         text-neutral-900
         transition-all
         duration-300
@@ -102,8 +109,8 @@ export default function Header() {
               {index < navigation.length - 1 && (
                 <span
                   className="
-          h-[13px]
-          w-[13px]
+          h-1.75
+          w-1.75
           shrink-0
           rounded-full
           bg-[#de2832]
@@ -467,20 +474,34 @@ function getSocialIcon(name) {
   const normalizedName = name.toLowerCase();
 
   if (normalizedName.includes("instagram")) {
-    return <FaInstagram size={18} />;
+    return (
+      <img
+        src={instagramIcon}
+        alt="Instagram"
+        className="h-[28px] w-[28px] object-contain"
+      />
+    );
   }
 
-  if (normalizedName.includes("youtube")) {
-    return <FaYoutube size={18} />;
+  if (normalizedName.includes("behance")) {
+    return (
+      <img
+        src={behanceIcon}
+        alt="Behance"
+        className="h-[28px] w-[28px] object-contain"
+      />
+    );
   }
 
   if (normalizedName.includes("linkedin")) {
-    return <FaLinkedinIn size={18} />;
+    return (
+      <img
+        src={linkedinIcon}
+        alt="LinkedIn"
+        className="h-[28px] w-[28px] object-contain"
+      />
+    );
   }
 
-  if (normalizedName.includes("vimeo")) {
-    return <FaVimeoV size={18} />;
-  }
-
-  return <Globe size={18} strokeWidth={1.5} />;
+  return null;
 }

@@ -50,7 +50,7 @@ export default function Footer() {
               duration-300
               hover:text-neutral-800
             ">
-            <FaBehance size={14} />
+            <FaBehance size={18} />
           </a>
 
           {/* LinkedIn */}
@@ -63,7 +63,7 @@ export default function Footer() {
               duration-300
               hover:text-neutral-800
             ">
-            <FaLinkedinIn size={14} />
+            <FaLinkedinIn size={18} />
           </a>
 
           {/* Instagram */}
@@ -76,7 +76,7 @@ export default function Footer() {
               duration-300
               hover:text-neutral-800
             ">
-            <FaInstagram size={14} />
+            <FaInstagram size={18} />
           </a>
         </div>
 
@@ -86,7 +86,7 @@ export default function Footer() {
           className="
             mt-8
             font-mono
-            text-[8px]
+            text-[12px]
             uppercase
             tracking-[0.1em]
             text-neutral-300
