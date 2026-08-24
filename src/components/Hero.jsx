@@ -175,32 +175,48 @@ export default function Hero() {
 
   const initialVideoWidth = isMobile ? "78vw" : isTablet ? "52vw" : "25vw";
 
-  const initialVideoHeight = isMobile ? "30vw" : isTablet ? "29.25vw" : "28vw";
+  const initialVideoHeight = isMobile ? "40vw" : isTablet ? "29.25vw" : "28vw";
+
+  // ==========================================================
+  // VIDEO SCROLL ANIMATION
+  // DESKTOP + TABLET ONLY
+  // ==========================================================
 
   const videoWidth = useTransform(
     scrollYProgress,
     [0, 0.45],
-    [initialVideoWidth, "100vw"],
+    isMobile
+      ? [initialVideoWidth, initialVideoWidth]
+      : [initialVideoWidth, "100vw"],
   );
 
   const videoHeight = useTransform(
     scrollYProgress,
     [0, 0.45],
-    [initialVideoHeight, "100vh"],
+    isMobile
+      ? [initialVideoHeight, initialVideoHeight]
+      : [initialVideoHeight, "100vh"],
   );
 
   // ==========================================================
   // VIDEO ROTATION
   // ==========================================================
 
-  const videoRotate = useTransform(scrollYProgress, [0, 0.35], [-3, 0]);
+  const videoRotate = useTransform(
+    scrollYProgress,
+    [0, 0.35],
+    isMobile ? [-5, 0] : [-3, 0],
+  );
 
   // ==========================================================
   // VIDEO RADIUS
   // ==========================================================
 
-  const videoRadius = useTransform(scrollYProgress, [0, 0.4], [8, 0]);
-
+  const videoRadius = useTransform(
+    scrollYProgress,
+    [0, 0.4],
+    isMobile ? [8, 8] : [8, 0],
+  );
   // ==========================================================
   // LEFT TYPOGRAPHY
   // ==========================================================
@@ -306,9 +322,10 @@ export default function Hero() {
     z-0
     ${heroHeight}
     bg-cover
-    bg-[position:left_-20px]
+    bg-[position:left_-22px]
     bg-no-repeat
     bg-fixed
+    
   `}
       style={{
         backgroundImage: `url(${heroBackground})`,
@@ -360,11 +377,12 @@ export default function Hero() {
               ${
                 isMobile
                   ? `
-                    left-[-2vw]
-                    top-[14vh]
+                    left-1/2
+-translate-x-1/2
+                    top-[13vh]
                     text-[38vw]
-                    leading-[0.68]
-                    tracking-[-0.065em]
+                    leading-[0.98]
+                    tracking-[-0.001em]
                   `
                   : isTablet
                     ? `
@@ -421,11 +439,12 @@ export default function Hero() {
               ${
                 isMobile
                   ? `
-                    bottom-[20vh]
-                    right-[6vw]
-                    text-[28vw]
-                    leading-[0.68]
-                    tracking-[-0.065em]
+                   bottom-[18vh]
+left-1/2
+-translate-x-1/2
+text-[32vw]
+leading-[0.98]
+tracking-[-0.001em]
                   `
                   : isTablet
                     ? `
@@ -485,18 +504,18 @@ export default function Hero() {
             borderRadius: videoRadius,
           }}
           className={`
-            absolute
-            left-1/2
-            z-20
-            -translate-x-1/2
-            -translate-y-1/2
-            overflow-hidden
-            border
-            border-black
-            bg-black
+    absolute
+    left-1/2
+    z-20
+    -translate-x-1/2
+    -translate-y-1/2
+    overflow-hidden
+    border
+    border-black
+    bg-black
 
-            ${isMobile ? "top-[48%]" : isTablet ? "top-[55%]" : "top-[54%]"}
-          `}>
+    ${isMobile ? "top-[48%]" : isTablet ? "top-[55%]" : "top-[54%]"}
+  `}>
           <video
             key={currentVideo}
             src={currentVideo}
@@ -506,10 +525,10 @@ export default function Hero() {
             playsInline
             preload="auto"
             className="
-              h-full
-              w-full
-              object-cover
-            "
+      h-full
+      w-full
+      object-cover
+    "
           />
         </motion.div>
         {/* ==================================================
@@ -626,7 +645,7 @@ export default function Hero() {
 
         {/* RED CROSS WEBSITE ASSESTS - ANIMATED */}
 
-        <motion.div
+        {/* <motion.div
           className="absolute left-[10.3%] bottom-[23.1%]"
           initial={{
             opacity: 0,
@@ -674,10 +693,10 @@ export default function Hero() {
               strokeLinecap="square"
             />
           </svg>
-        </motion.div>
+        </motion.div> */}
 
         {/* RED CROSS ABOVE I  */}
-        <motion.div
+        {/* <motion.div
           className="absolute right-[9%] bottom-[33%]"
           initial={{
             opacity: 0,
@@ -725,10 +744,10 @@ export default function Hero() {
               strokeLinecap="square"
             />
           </svg>
-        </motion.div>
+        </motion.div> */}
 
         {/* BLACK CROSS ASSESTS - ANIMATED  */}
-        <motion.div
+        {/* <motion.div
           className="absolute left-[23.5%] bottom-[-0.3%]"
           initial={{
             opacity: 0,
@@ -776,7 +795,7 @@ export default function Hero() {
               strokeLinecap="square"
             />
           </svg>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

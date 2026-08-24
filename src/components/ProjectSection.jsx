@@ -60,6 +60,7 @@ export default function ProjectSection() {
         pt-[10vh]
         md:px-[6vw]
         lg:px-[5.5vw]
+        
       ">
       {/* CATEGORY NAVIGATION */}
 
