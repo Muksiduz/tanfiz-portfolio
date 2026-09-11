@@ -225,7 +225,7 @@ export default function Hero() {
     scrollYProgress,
     [0, 0.5, 1],
     isMobile
-      ? ["0vw", "-4vw", "-9vw"]
+      ? ["0vw", "0vw", "0vw"]
       : isTablet
         ? ["0vw", "-5vw", "-11vw"]
         : ["0vw", "-8vw", "-18vw"],
@@ -235,7 +235,7 @@ export default function Hero() {
     scrollYProgress,
     [0, 0.5, 1],
     isMobile
-      ? ["0vh", "-6vh", "-14vh"]
+      ? ["0vh", "0vh", "0vh"]
       : isTablet
         ? ["0vh", "-9vh", "-20vh"]
         : ["0vh", "-15vh", "-35vh"],
@@ -244,7 +244,7 @@ export default function Hero() {
   const motionScale = useTransform(
     scrollYProgress,
     [0, 0.45],
-    [1, isMobile ? 1.08 : isTablet ? 1.1 : 1.15],
+    [1, isMobile ? 1 : isTablet ? 1.1 : 1.15],
   );
 
   // ==========================================================
@@ -255,7 +255,7 @@ export default function Hero() {
     scrollYProgress,
     [0, 0.45, 0.7, 1],
     isMobile
-      ? ["0vw", "2vw", "7vw", "15vw"]
+      ? ["0vw", "0vw", "0vw", "0vw"]
       : isTablet
         ? ["0vw", "3vw", "9vw", "20vw"]
         : ["0vw", "4vw", "15vw", "35vw"],
@@ -265,7 +265,7 @@ export default function Hero() {
     scrollYProgress,
     [0, 0.45, 0.7, 1],
     isMobile
-      ? ["0vh", "5vh", "-2vh", "-12vh"]
+      ? ["0vh", "0vh", "0vh", "0vh"]
       : isTablet
         ? ["0vh", "7vh", "-3vh", "-18vh"]
         : ["0vh", "10vh", "-5vh", "-30vh"],
